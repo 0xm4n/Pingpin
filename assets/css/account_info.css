@@ -1,0 +1,61 @@
+.headimage{
+    float: left;
+    margin-top: -20px;
+    margin-left: 15px;
+}
+
+.headimage img{
+    height: 100px;
+    width: 114px;
+}
+
+.headtitle{
+    color: rgb(1, 78, 1);
+    font-size: 150%;
+    position: relative;
+    left: -10px;
+    top: 10px;
+
+}
+
+.headform form{
+    position: relative;
+    left: 40px;
+    padding: 2px;
+    top: -20px;
+    
+}
+
+form input{
+    height: 22px;
+    width: 210px;
+    border-radius: 8px;
+    border-width: 1.5px;
+    border-color: grey;
+}
+
+li{
+    position: relative;
+    left: 270px;
+    top: -65px;
+    margin-left: 60px;
+    padding: 2px;
+    display: inline;
+    font-size: 115%;
+}
+
+a:link{
+    color:black;
+    text-align: center;
+    padding:2px;
+    text-decoration: none;
+   
+}
+a:visited{
+    color:black;
+}
+
+a:hover{
+    border-bottom: 1px solid gray;
+    
+}
