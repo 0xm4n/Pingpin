@@ -1,0 +1,159 @@
+body {
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
+}
+
+a{
+    color: white;
+}
+
+#header {
+    height: 70px;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: center;
+}
+
+#logo_img {
+    width: 150px;
+    height: 65;
+    text-align: start;
+    margin-left: 10px;
+}
+
+#banner {
+    position: absolute;
+    font-family: "STXingkai";
+    color: white;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.separator {
+    font-size: 20px;
+    color: white;
+}
+
+#welcome {
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+#right_header {
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.redirection {
+    font-size: 16px;
+    color: white;
+}
+
+#tab_content {
+    width: 500px;
+    height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 20px;
+}
+
+#tips {
+    font-size: 15px;
+    color: antiquewhite;
+    text-align: right;
+    width: 300px;
+    margin-inline-end: 180px;
+}
+
+input {
+    width: 280px;
+    height: 20px;
+    line-height: 20px;
+    padding: 13px 0;
+    border: none;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #222;
+    background: #fff;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+#contact {
+    margin-bottom: 30px;
+}
+
+/*性别选项框*/
+
+/*性别白色背景框*/
+
+#b-sex {
+    width: 350px;
+    height: 45px;
+    background-color: white;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+/*性别标签*/
+
+.block-sex label {
+    width: 50px;
+    height: 20px;
+    color: rgb(148, 153, 151);
+    margin-left: 20px;
+    margin-right: 15px;
+}
+
+/*性别单选框*/
+
+.block-sex input {
+    width: 15px;
+    height: 9px;
+    color: #222;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 5px;
+}
+
+/*男女标签*/
+
+.sex_label {
+    padding-right: 20px;
+}
+
+/*提交按钮*/
+
+#btn_register {
+    width: 295px;
+    height: 45px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    background-color: #32695C;
+    border-radius: 4px;
+    border-color: rgba(135, 165, 155, 0.308);
+    border-width: 1.5px;
+    margin-bottom: 20px;
+    margin-top: 33px;
+}

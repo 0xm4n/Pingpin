@@ -1,349 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-  <link href="./assets/css/hiring.css" rel="stylesheet" type="text/css">
-  <meta content="text/html" charset="utf-8">
-  <title>发布兼职</title>
+    <title>发布兼职</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="hiring.css">
 </head>
 
 <body>
-  <div id="wrapper">
-    <div class="nav">
-      <!-- logo跳转到主页 -->
-      <a class="headimage" href="/">
-        <img src="source/image/navigation_menu/logo.png">
-      </a>
-      <a href="/" class="headtitle">
-        <strong>聘</strong>
-      </a>
-      <!-- 搜索栏 -->
-      <form method="get" class="headform" action="https://www.baidu.com/search">
-        <input type="text" class="search_input" title="在此处输入搜索内容" placeholder="唐老板♂ want you">
-        <a class="search_btn" href="#">
-          <img class="ic_search" src="source/image/navigation_menu/search.png" >
-          </a>
+    <!--头部导航条-->
+    <div id="header">
+
+        <img id="logo_img" src="img/logo.png" alt="logo">
+        <span id="seperator">|</span>
+        <form action="">
+            <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+            <img src="" alt="">
         </form>
-        
-        <!-- 导航菜单 -->
-        <div class="headlead ">
-          <ul class="menu ">
-            <!-- 首页 -->
-            <div class="dropdown ">
-              <a class="dropbtn " href="# ">首页</a>
-              <div class="dropdown_content ">
-                <a href="# ">系统首页</a>
-                <a href="# ">账户设置</a>
-                <a href="# ">登陆信息</a>
-              </div>
-            </div>
-            <!-- 申请兼职 --> 
-            <div class="dropdown ">
-              <a href="# " class="dropbtn ">申请兼职</a>
-              <div class="dropdown_content ">
-                <a href="# ">校内兼职</a>
-                <a href="# ">实验室兼职</a>
-                <a href="# ">校外兼职</a>
-              </div>
-            </div>
-            <!-- 发布兼职 -->
-            <li class="headlead_item ">
-              <a href="# ">发布兼职</a>
-            </li>
-            <!-- 我的兼职 -->
-            <li class="headlead_item ">
-              <a href="# ">我的兼职</a>
-            </li>
-          </ul>
-        </div>
+        <span class="header_tab" id="f1"><a href="home.html">首页</a></span>
+        <span class="header_tab" id="f2">申请兼职</span>
+        <span class="header_tab" id="f3">发布兼职</span>
+        <span class="header_tab" id="f4">我的兼职</span>
+        <span class="header_tab" id="logout"><a href="index.html">退出登录</a></span>
+        <img id="logout_icon" src="img/logout.png" alt="logout">
 
-        <!-- 退出登陆 -->
-        <a class="btn logoff " target="_self " href="# ">退出登陆</a>
-      </div>
-
-      <div class="content ">
-        <!-- 主题和分割线 -->
-        <h1 class="topic ">发布兼职</h1>
-        <div>
-          <img id="topic-line " class="img " src="source/image/in_school/u106.png ">
-        </div>
-        <!-- 发布兼职 参考兼职猫网站页面 -->
-        <!-- 基本信息 -->
-        <div class="box ">
-          <div class="head ">填写详情</div>
-
-          <div class="cont ">
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              兼职类型：
-              </span>
-              <div>
-                <select class="select type " id="type ">
-                  <option selected="selected ">请选择类型</option>
-                  <option>其他</option>
-                  <option>工作1</option>
-                  <option>工作2</option>
-                  <option>工作3</option>
-                </select>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              兼职标题：
-              </span>
-              <div>
-                <label class="ipt_outer ">
-                  <input id="title " maxlength="="20" placeholder="请输入兼职标题">
-          </label>
     </div>
-  </div>
-  <div class="row">
-    <span class="txt_left">
-      <span class="red"> *
-      </span>
-      招聘人数：
-    </span>
-    <div>
-      <label class="ipt_outer">
-        <input id="resume_sum" maxlength="=" 3 " placeholder="请输入人数 ">
-                </label>
-              </div>
-            </div>
+
+    <!--主体内容-->
+    <div id="content">
+        <!--主体内容头部标题-->
+        <div class="content_header">
+            <h1 id="topic">填写兼职相关信息</h1>
+            <hr>
+        </div>
+        <!--主体内容表格-->
+        <div class="content_body">
+
             <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              结算周期：
-              </span>
-              <div>
-                <select class="select " id="clearing_cycle ">
-                  <option value="1 ">完工结</option>
-                  <option value="2 ">日结</option>
-                  <option value="3 ">周结</option>
-                  <option value="4 ">月结</option>
-                </select>
-              </div>
-            </div>
-            <div class="row " id="salary_row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              基本工资：
-              </span>
-              <div>
-                <label class="ipt_outer ">
-                  <input id="salary " style="width: 80px; " placeholder="请输入数字 ">
-                </label>
-                <select id="unit " class="select " style="width: 114px; ">
-                  <option value="1 ">元/小时</option>
-                  <option value="2 ">元/天</option>
-                  <option value="3 ">元/月</option>
-                  <option value="4 ">元/次</option>
-                  <option value="5 ">元/单</option>
-                </select>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              工作种类：
-              </span>
-              <div>
-                <select id="job_category " class="select ">
-                  <option value="1 " selected="selected ">短招</option>
-                  <option value="2 ">长招</option>
-                </select>
-              </div>
-            </div>
-            <div class="row " id="date_list_row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              工作时间：
-              </span>
-              <div>
-                <label class="ipt_outer ">
-                  <input class="date_list " id="date_list " maxlength="="20" placeholder="2018-8-04">
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <span class="txt_left">
-      <span class="red"> *
-      </span>
-      上班时间：
-    </span>
-    <div>
-      <label class="ipt_outer">
-        <input class="date_list" id="workdate_list" maxlength="=" 20 " placeholder="8:50-12:30 ">
-                </label>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              工作地点：
-              </span>
-              <div>
-                <select class="select short " id="p ">
-                  <option>广东</option>
-                  <option>北京市</option>
-                  <option>湖北</option>
-                  <option>上海市</option>
-                  <option>江苏</option>
-                  <option>重庆市</option>
-                  <option>湖南</option>
-                  <option>浙江</option>
-                  <option>河北</option>
-                  <option>安徽</option>
-                  <option>辽宁</option>
-                  <option>宁夏</option>
-                  <option>青海</option>
-                  <option>甘肃</option>
-                  <option>陕西</option>
-                  <option>西藏</option>
-                  <option>云南</option>
-                  <option>贵州</option>
-                  <option>河南</option>
-                  <option>山东</option>
-                  <option>江西</option>
-                  <option>吉林</option>
-                  <option>黑龙江</option>
-                  <option>内蒙古</option>
-                  <option>山西</option>
-                  <option>新疆</option>
-                  <option>香港</option>
-                  <option>福建</option>
-                  <option>广西</option>
-                  <option>四川</option>
-                  <option>天津市</option>
-                  <option>海南</option>
-                </select>&nbsp;&nbsp;&nbsp;
-                <select class="select short " id="c ">
-                  <option>广州</option>
-                </select>&nbsp;&nbsp;&nbsp;
-                <select class="select short " id="a ">
-                  <option>天河</option>
-                </select>
-              </div>
-            </div>
-            <div class="row ">
-              <div id="r_result ">
-                <label class="ipt_outer ">
-                  <!-- 后台把上面的地址传入这里，方便用户输入具体地址 -->
-                  <span id="slt ">广东广州天河</span>
-                  <input type="text " id="suggestId " maxlength="80 " size="20 ">
-                </label>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                &nbsp;&nbsp;&nbsp;性别要求:
-              </span>
-              <div>
-                <select class="select type " id="sex ">
-                  <option selected="selected " value="不限 ">男女不限</option>
-                  <option value="男 ">男</option>
-                  <option value="女 ">女</option>
-                </select>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                &nbsp;&nbsp;&nbsp;工作福利:
-              </span>
-              <div id="welfare ">
-                <label class="checkbox " style="margin_right: 20px; ">
-                  <input type="checkbox " name="welfare " value="0 ">包吃
-                </label>
-                <label class="checkbox " style="margin_right: 20px; ">
-                  <input type="checkbox " name="welfare " value="1 ">包住
-                </label>
-                <label class="checkbox " style="margin_right: 20px; ">
-                  <input type="checkbox " name="welfare " value="2 ">交通补贴
-                </label>
-                <label class="checkbox " style="margin_right: 20px; ">
-                  <input type="checkbox " name="welfare " value="3 ">提成
-                </label>
-                <label class="checkbox " style="margin_right: 20px; ">
-                  <input type="checkbox " name="welfare " value="4 ">免费培训
-                </label>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">  *
-                  </span>
-              兼职描述：
-              </span>
-              <div>
-                <textarea class="textarea " id="descp " rows="6 " maxlength="2000 " placeholder="请输入兼职信息。兼职工作要求，具体时间等等... "></textarea>
-              </div>
+                <span class="red_star"> *</span>
+                <span>兼职标题:</span> 
+                <input class="type1" maxlength=40 placeholder="请输入兼职标题" >
             </div>
 
-          </div>
+            <div class="row ">
+                <span class="red_star"> *</span>
+                <span>兼职类型:</span>    
+                <span>
+                    <select class="select type " id="type ">
+                        <option selected="selected ">请选择类型</option>
+                        <option>家教</option>
+                        <option>校内兼职</option>
+                        <option>校企合作</option>
+                        <option>其它</option>
+                    </select>
+                </span>
+            </div>
+
+            <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>学历要求:</span>    
+                    <span>
+                        <select class="select type " id="type ">
+                            <option selected="selected ">请选择类型</option>
+                            <option>本科生（含大一）</option>
+                            <option>研究生</option>
+                            <option>大二及以上</option>
+                            <option>大三及以上</option>
+                        </select>
+                    </span>
+            </div>
+
+            <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>性别要求:</span>    
+                    <span>
+                        <select class="select type " id="type ">
+                            <option selected="selected ">请选择类型</option>
+                            <option>男</option>
+                            <option>女</option>
+                            <option>不限</option>
+                        </select>
+                    </span>
+            </div>
+
+            <div class="row ">
+                    <span>&nbsp;&nbsp; 其他要求:</span> 
+                    <input class="type2" maxlength=140 placeholder="请输入其他工作要求" >
+            </div>
+
+            <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>工作内容:</span> 
+                    <input class="type2" maxlength=140 placeholder="请输入兼职工作内容" >
+            </div>
+
+            <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>工作时间:</span> 
+                    <input class="type1" maxlength=40 placeholder="如：每周不少于10小时，根据学生空闲时间进行安排" >
+            </div>
+
+            <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>工作地点:</span> 
+                    <input class="type1" maxlength=40 placeholder="如：五山校区西区饭堂" >
+            </div>
+
+            <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>工作报酬:</span> 
+                    <input class="type1" maxlength=40 placeholder="如：18.3元/小时" >
+            </div>
+            <div class="row ">
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 备注:</span> 
+                    <input class="type2" maxlength=140 placeholder="其他信息" >
+            </div>
         </div>
-        <!-- 工作对接 -->
-        <div class="box ">
-          <div class="head ">工作对接</div>
-          <div class="cont ">
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">&nbsp;*</span>
-                简历邮箱：
-              </span>
-              <div>
-                <label class="ipt_outer ">
-                  <input id="email " maxlength="50 " placeholder="请输入联系人邮箱 " value="233333XD ">
-                </label>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">&nbsp;*</span>
-                联系人：
-              </span>
-              <div>
-                 <label class="ipt_outer ">
-                  <input id="host " maxlength="10 " placeholder="请输入联系人姓名 " value="唐老板 ">
-                </label>
-              </div>
-            </div>
-            <div class="row ">
-              <span class="txt_left ">
-                <span class="red ">&nbsp;*</span>
-                咨询电话：
-              </span>
-              <div>
-                 <label class="ipt_outer ">
-                  <input id="tel " placeholder="请输入接受报名的电话号码 " value="8848 ">
-                </label>
-              </div>
-            </div>
-            <!-- 阅读并提交按钮 后台可以通过设置id为submit_btn_disabled和submit_btn的style=“display:"来实现 同意后才可点击发布-->
-        <div class="row">
-          <div>
-            <label class="checkbox">
-              <input type="checkbox" id="agreementId" checker="checked">我已阅读并同意
-              <a href="#" id="xieyi_btn" class="blue" style="text-decoration: underline;">ping聘发布兼职协议</a>。
-            </label>
-          </div>
+        <!--主体内容头部标题-->
+        <div class="content_header">
+                <h1 id="topic">填写联系方式</h1>
+                <hr>
         </div>
-        <div class="row">
-          <div class="submit_btn disabled" id="submit_btn_disabled" style="display: none;">点击发布
-          </div>
-          <div class="submit_btn" id="submit_btn" style="display: block;">点击发布
-          </div>
+        <!--主体内容表格-->
+        <div class="content_body">
+                <div class="row ">
+                    <span class="red_star"> *</span>
+                    <span>联系人:&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                    <input class="type1" maxlength=40 placeholder="请输入联系人姓名" >
+                </div>
+
+                <div class="row ">
+                        <span class="red_star"> *</span>
+                        <span>咨询电话 :</span> 
+                        <input class="type1" maxlength=40 placeholder="请输入咨询电话" >
+                </div>
+
+                <div class="row ">
+                        <span>简历邮箱:&nbsp;&nbsp;&nbsp;</span> 
+                        <input class="type1" maxlength=40 placeholder="请输入简历投递邮箱" >
+                </div>
+
+                <div class="row ">
+                        <span>QQ或其他 :</span> 
+                        <input class="type1" maxlength=40 placeholder="请输入联系QQ或其他方式" >
+                </div>
         </div>
     </div>
-  </div>
-  </div>
+    <!--提交按钮-->
+    <button id="publish">点击发布</button>
+
 
 </body>
 

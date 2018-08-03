@@ -1,0 +1,104 @@
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
+}
+
+form {
+    margin: 0px;
+    display: inline;
+}
+
+/*定义头部高度背景颜色*/
+
+#header {
+    height: 83px;
+    color: white;
+    background-color: #464C5B;
+    border-radius: 3px;
+}
+
+/*以下为头部从左到右每一个元素的样式*/
+#logo_img {
+    width: 150px;
+    height: 65;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#seperator {
+    font-size: 38px;
+    position: absolute;
+    margin-top: 15px;
+    color: #999999;
+}
+
+#search_input {
+    position: absolute;
+    width: 190px;
+    margin-left: 30px;
+    margin-top: 27px;
+    margin-bottom: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    border-radius: 4px;
+}
+
+.header_tab {
+    margin: 0px 20px;
+    color: #cccccc;
+    font-size: 17px;
+}
+
+#f1 {
+    height: 22.4px;
+    color: #9BDDD1;
+    background-color: rgba(51, 51, 51, 0.59);
+    position: absolute;
+    margin-left: 250px;
+    margin-right: 0px;
+    padding: 30px 20px;
+}
+
+#f2 {
+    position: absolute;
+    margin-left: 324.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
+}
+
+#f3 {
+    position: absolute;
+    margin-left: 432.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
+}
+
+#f4 {
+    position: absolute;
+    margin-left: 540.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
+}
+
+#logout {
+    position: absolute;
+    margin-left: 648.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
+}
+
+#logout_icon {
+    position: absolute;
+    margin-top: 27px;
+    margin-left: 740px;
+}
+
+a{
+    color:#cccccc;
+    text-decoration: none;
+}

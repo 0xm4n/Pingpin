@@ -5,11 +5,7 @@ body {
 }
 
 #tab {
-    position: absolute;
-
-    left: 35%;
-    right: 35%;
-    top: 8%;
+    text-align: center;
 
 }
 
