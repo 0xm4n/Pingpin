@@ -1,9 +1,5 @@
 body {
-<<<<<<< HEAD:assets/css/index.css
     background-image: url(../../img/background.jpg);
-=======
-    background-image: url("../../img/background.jpg");
->>>>>>> 2b657e018493d0a14384261ad0345b20aca2d3b9:assets/css/index.css
     background-size: cover;
     background-repeat: no-repeat;
 }
