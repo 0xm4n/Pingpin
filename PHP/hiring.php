@@ -21,21 +21,14 @@
 
     $len1=40;   //限制长度40
     $len2=140;  //限制长度140
+    $len3=18;  //限制长度18
 
     //填写联系方式
     $contacts = lib_replace_end_tag($_POST['contacts']);    //联系人
     checklen($contacts,"联系人",$len1);
 
-    if(is_numeric($_POST['phone'])){
-        $phone = lib_replace_end_tag($_POST['phone']);   //咨询电话
-    }
-    else{
-        checklen($phone,"咨询电话",$len1);
-        echo "<script>alert('咨询电话必须为数字!');</script>";
-        header("Refresh:0;url=../hiring.html");
-	    exit();
-
-    }
+    $phone = lib_replace_end_tag($_POST['phone']);   //咨询电话
+    checklen($phone,"咨询电话",$len3);
 
     $email = lib_replace_end_tag($_POST['email']);   //简历邮箱
     checklen($email,"简历邮箱",$len1);

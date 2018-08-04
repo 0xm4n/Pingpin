@@ -13,6 +13,7 @@
 
     $len1=20;
     $len2=15;
+    $len3=18;
 
     if (empty($_POST)) {	
         echo "<script>alert('您提交的表单数据超过post_max_size!');</script>";
@@ -50,16 +51,9 @@
     $name = lib_replace_end_tag($_POST['name']);
     checklen($name,"真实姓名",$len2);
 
-    if(is_numeric($_POST['phone'])){
-        $phone = lib_replace_end_tag($_POST['phone']);   
-    }
-    else{
-        checklen($phone,"联系电话",$len1);
-        echo "<script>alert('联系电话必须为数字!');</script>";
-        header("Refresh:0;url=../register.html");
-	    exit();
 
-    }
+    $phone = lib_replace_end_tag($_POST['phone']);  
+    checklen($phone,"联系电话",$len3);
 
     $sex = lib_replace_end_tag($_POST['sex']);
     checklen($sex,"性别",$len2);
@@ -92,8 +86,9 @@
     if($err2){        
         $deleteSQL = "DELETE FROM user WHERE username = '$username'";
         mysql_query($deleteSQL);
-        echo "<script>alert('其它注册信息错误！');</script>";
-        header("Refresh:0;url=../register.html");
+        echo $err2;
+        //echo "<script>alert('其它注册信息错误！');</script>";
+        header("Refresh:10;url=../register.html");
 	    exit();
     }
 
