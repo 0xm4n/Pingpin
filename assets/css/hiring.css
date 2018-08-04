@@ -1,267 +1,178 @@
-body{
-	margin: 0px;
-	background-image: none;
-	position: static;
-	left:auto;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: left;
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
 }
 
-.nav {
-	top:0;
-	border-width: 0 0 1px;
+form {
+    margin: 0px;
+    display: inline;
 }
 
-a{
-	text-decoration: none;
-	color: #666;
+/*定义头部高度背景颜色*/
+
+#header {
+    height: 83px;
+    color: white;
+    background-color: #464C5B;
+    border-radius: 3px;
 }
 
-.nav .headimage {
-	float: left;
-	margin-top: -20px;
-	margin-left: 15px;
+/*以下为头部从左到右每一个元素的样式*/
+#logo_img {
+    width: 150px;
+    height: 65;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
-.nav .headtitle {
-	color: rgb(1,78,1);
-	font-size: 150%;
-	position: relative;
-	left: -10px;
-	top: 10px;
+#seperator {
+    font-size: 38px;
+    position: absolute;
+    margin-top: 15px;
+    color: #999999;
 }
 
-.nav .headimage img {
-	width: 114px;
-	height: 100px;
+#search_input {
+    position: absolute;
+    width: 190px;
+    margin-left: 30px;
+    margin-top: 27px;
+    margin-bottom: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    border-radius: 4px;
 }
 
-/*搜索栏，参考简书*/
-.nav form {
-	position: relative;
-	display: inline-block;
-	margin: 20px;
+.header_tab {
+    margin: 0px 20px;
+    color: #cccccc;
+    font-size: 17px;
 }
 
-
-.nav form .search_input{
-	padding: 0 40px 0 20px;
-	width: 120px;
-	height: 29px;
-	font-size: 11px;
-	border: 1px solid #a9a9a9;
-	border-radius: 40px;
-	background-color: rgb(255, 255, 255);
+#f1 {
+    position: absolute;
+    margin-left: 250px;
+    margin-right: 0px;
+    padding: 30px 20px;
 }
 
-.nav form .search_btn {
-	position: absolute;
-	top: 0px;
-	right: 5px;
-	width: 30px;
-	height: 30px!important;
-	line-height: normal!important;
-	padding: 0!important;
-	color: #969696!important;
-	text-align: center;
+#f2 {
+    position: absolute;
+    margin-left: 324.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
 }
 
-.nav form .ic_search {
-	margin: 7px 0 0 0;
-	width: 17px;
-	height: 18px;
-}
-/*退出登陆*/
-
-.btn {
-	display: inline-block;
-	margin-bottom: 0;
-	font-weight: 400;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;
-	background-image: none;
-	border: 1px solid transparent;
-	white-space: nowrap;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.42857;
-	border-radius: 4px;
-	user-select: none;
+#f3 {
+    height: 22.4px;
+    color: #9BDDD1;
+    background-color: rgba(51, 51, 51, 0.59);
+    position: absolute;
+    margin-left: 432.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
 }
 
-.nav .logoff {
-	float: right;
-	width: 100px;
-	height: 40px;
-	line-height: 24px;
-	margin: 8px 15px 0;
-/*	border: 1px solid rgb(1,78,1);*/
-	border-radius: 20px;
-	font-size: 15px;
-	background-color:transparent; 
-}
-/*导航*/
-.nav .headlead {
-	display: inline-block;
-	position: relative;
+#f4 {
+    position: absolute;
+    margin-left: 540.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
 }
 
-.nav .menu {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-/*	border: 1px solid #e7e7e7;
-*/	background-color: #ffffff;
+#logout {
+    position: absolute;
+    margin-left: 648.2px;
+    margin-right: 0px;
+    padding: 30px 20px;
 }
-.nav .headlead_item,.dropdown
+
+#logout_icon {
+    position: absolute;
+    margin-top: 27px;
+    margin-left: 740px;
+}
+
+/*主体逻辑分区宽度和居中设置*/
+#content
 {
-	float: left;
-}
-.nav .headlead_item a,.dropbtn{
-	display: block;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    padding: 9px 16px;
+}
+/*主体头部标题和水平分割线*/
+.content_header{
+    margin-top: 30px;
+
 }
 
-.nav .headlead_item a:hover:not(.active) {
-    background-color: #f3f3f3;
-}
-.nav .dropdown a:hover:not(.active){
-	background-color: #f3f3f3;
-}
-.nav .dropdown_content a:hover:not(.active){
-	background-color: #ffffff;
+#topic{
+    font-size: 20px;
+    color: #385D9B;
+    text-align: start;
 }
 
-.nav .headlead_item a.active{
-	color: white;
-	background-color: #f3f3f3;
-}
-.dropdown {
-	display: inline-block;
+hr{
+    margin-top: 10px;
+    height: 0.8px;
+    background-color: #cccccc;
 }
 
-.dropdown_content {
-	display: none;
-	position: absolute;
-	background-color: #f3f3f3;
-	min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown_content a{
-	padding: 12px 16px;
-	display: block;
-	display: block;
-}
-
-.dropdown_content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown_content {
-    display: block;
-}
-
-.content {
-	position:relative;
-	padding-top: 10px;
-}
-
-.content .topic{
-	color: #1b7db8;
-	margin-bottom: 0;
-}
-
-/*发布兼职填写栏样式*/
-
-.box .head{
-	background-color: #ededed;
-	padding: 8px 10px;
-	color: #666;
-}
-
-.box .cont{
-	margin-top: 10px;
-	padding-left: 20px;
+.content_body{
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-color: rgba(77, 76, 76, 0.397);
+    border-width: 1px;
+    border-style: solid;
+    padding: 0 10px;
 }
 
 .row{
-	margin-left: 100px;
-	padding: 12px 0;
+    margin: 20px 0px;
+    margin-left: 15px;
 }
 
-.row .txt_left{
-	float: left;
-	margin-left: -100px;
-	color: #666;
+.red_star{
+    color:red;
+}
+input.type1{
+    padding: 5px 8px;
+    border-radius: 2px;
+    width: 350px;
 }
 
-.red{
-	color: #f00;
+input.type2{
+    padding: 5px 8px;
+    border-radius: 2px;
+    width: 350px;
+    height: 60px;
 }
 
-.select{
-	width: 210px;
-	padding: 5px 5px;
-	font-size: 13px;
+select{
+    padding:4px 5px;
+    border-radius: 3px;
 }
 
-.ipt_outer{
-	border: 1px solid #ccc;
-	padding: 5px 5px;
-	font-size: 13px;
+button{
+    position: absolute;
+    padding: 8px 22px;
+    left: 35%;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+    background-color: #385D9B;
+    border-color: #385D9B;
 }
 
-.ipt_outer input{
-	border: 0 none;
-	line-height: 18px;
-	outline: medium none;
-	width: 200px;
-}
-
-.textarea{
-	resize: none;
-	width: 400px;
-	padding: 5px 5px;
-	font-size: 13px;
-	margin-top: -5px;
-	border: 1px solid #ccc;
-}
-
-.short{
-	width: auto;
-}
-
-.checkbox{
-	position: relative;
-}
-
-.checkbox input{
-	position: relative;
-	top: 2px;
-}
-
-.blue{
-	color: #2674D1;
-}
-
-.submit_btn{
-	transition: opacity 0.2s;
-	background-color: #fc9603;
-	opacity: 0.8;
-	width: 200px;
-	padding: 6px;
-	color: #fff;
-	text-align: center;
-	cursor: pointer;
-}
-
-.submit_btn.disabled{
-	display: none;
-	background-color: #ddd;
-	color: #aaa;
-	cursor: not-allowed;
-	cursor: no-drop;
+a{
+    color:#cccccc;
+    text-decoration: none;
 }
