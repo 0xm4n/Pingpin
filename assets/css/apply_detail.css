@@ -22,8 +22,8 @@ form {
 
 body{
     background-color: rgb(241, 243, 248);
+    margin-bottom: 50px;
 }
-
 
 /*以下为头部从左到右每一个元素的样式*/
 #logo_img {
@@ -67,6 +67,9 @@ body{
 }
 
 #f2 {
+    height: 22.4px;
+    color: #9BDDD1;
+    background-color: rgba(51, 51, 51, 0.59);
     position: absolute;
     margin-left: 324.2px;
     margin-right: 0px;
@@ -74,9 +77,6 @@ body{
 }
 
 #f3 {
-    height: 22.4px;
-    color: #9BDDD1;
-    background-color: rgba(51, 51, 51, 0.59);
     position: absolute;
     margin-left: 432.2px;
     margin-right: 0px;
@@ -103,7 +103,6 @@ body{
     margin-left: 740px;
 }
 
-/*主体逻辑分区宽度和居中设置*/
 #content
 {
     width: 800px;
@@ -111,70 +110,77 @@ body{
     margin-right: auto;
     text-align: center;
 }
-/*主体头部标题和水平分割线*/
-.content_header{
-    margin-top: 30px;
 
-}
-
-#topic{
-    font-size: 20px;
-    color: #385D9B;
+#content_abstract{
     text-align: start;
-}
-
-hr{
-    margin-top: 10px;
-    height: 0.8px;
-    background-color: #cccccc;
-}
-
-.content_body{
-    text-align: start;
-    margin-top: 20px;
-    margin-left: 10px;
-
-    padding: 10px 10px;
     background-color: white;
+    margin-top: 25px;
+    padding: 10px 35px;
     border-radius: 3px;
+}
+
+#pt_title
+{
+	font-size: 25px;
+	font-weight: 400;
+	margin: 10px;
+	color:#464C5B;
+}
+
+#salary{
+    padding: 5px 25px;
+    color: rgb(70, 76, 91);
+	font-size: 20px;
+	font-weight: 1000;
+}
+
+#require{
+    color: rgb(151, 151, 151);
+    font-size: 14px;
+    margin: 10px 15px;
+}
+
+#cotent_detail{
+    text-align: start;
+    background-color: white;
+    margin-top: 30px;
+    padding: 30px 50px;
+    line-height: 30px;
+    border-radius: 3px;
+    
 }
 
 .row{
-    margin: 20px 0px;
-    margin-left: 15px;
+    margin-top: 15px;
+    margin-left:10px; 
 }
 
-.red_star{
-    color:red;
-}
-input.type1{
-    padding: 5px 8px;
-    border-radius: 2px;
-    width: 350px;
+.content_header{
+    margin-top: 15px;
 }
 
-input.type2{
-    padding: 5px 8px;
-    border-radius: 2px;
-    width: 350px;
-    height: 60px;
+#sub_title{
+    font-size: 22px;
 }
 
-select{
-    padding:4px 5px;
+.sub_title2{
+    font-weight: 400;
+}
+
+.sub_content2{
+    margin-left: 20px;
+    font-size: 14.5px;
+    color: rgb(112, 112, 112);
+    font-weight: 300px;
+}
+
+#apply_btn{
+    margin: 25px;
+    padding: 15px 40px;
     border-radius: 3px;
-}
-
-button{
-    position: absolute;
-    padding: 8px 22px;
-    left: 35%;
-    margin-bottom: 30px;
-    border-radius: 3px;
-    margin-top: 10px;
-    color: white;
-    background-color: #385D9B;
-    border-color: #385D9B;
+    background-color: #464C5B;
+    border-width: 0px;
+    color:white;
 }
 
 a{
