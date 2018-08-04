@@ -62,7 +62,7 @@
     $place = lib_replace_end_tag($_POST['place']);   //工作地点
     checklen($place,"工作地点",$len1);
 
-    $reward = lib_replace_end_tag($_POST['reward']); //工作报酬
+    $reward =$_POST['reward']; //工作报酬
     checklen($reward,"工作报酬",$len1);
     
     $remarks = lib_replace_end_tag($_POST['remarks']);   //备注
