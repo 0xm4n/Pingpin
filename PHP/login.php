@@ -1,13 +1,17 @@
 <?php
   include_once("mysql.php");
+  include_once("easySecure.php");
 
   getConnect();
 
   $result = mysql_query("SELECT * FROM user");
   $flag = false;
 
+  $username=lib_replace_end_tag($_POST['username']);
+  $password=lib_replace_end_tag($_POST['password']);
+
   while ($row = mysql_fetch_array($result)) {
-    if ($_POST['username'] == $row['username'] && $_POST['password'] == $row['password'])
+    if ($username == $row['username'] && $password == $row['password'])
       $flag = true;
   }
 
