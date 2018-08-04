@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
+    echo "<script>alert('请先登陆！');</script>";
+    header("Refresh:0;url=index.html");
+    exit();
+  }
+?>
+
 <!doctype html>
 <html>
 
@@ -18,10 +28,10 @@
             <img src="" alt="">
         </form>
         <span class="header_tab" id="f1">
-            <a href="home.html">首页</a>
+            <a href="home.php">首页</a>
         </span>
         <span class="header_tab" id="f2">
-            <a href="apply.html">申请兼职</a>
+            <a href="apply.php">申请兼职</a>
         </span>
         <span class="header_tab" id="f3">发布兼职</span>
         <span class="header_tab" id="f4">我的兼职</span>

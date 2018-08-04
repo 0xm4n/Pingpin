@@ -1,3 +1,13 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
+    echo "<script>alert('请先登陆！');</script>";
+    header("Refresh:0;url=index.html");
+    exit();
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 
