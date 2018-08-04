@@ -13,12 +13,12 @@
 
   if ($_POST['password'] == null || $_POST['username'] == null) {
     echo "<script>alert('请填写用户名或密码');</script>";
-          header("Refresh:0;url=../account_login.html");
+          header("Refresh:0;url=../index.html");
   } else if ($flag == true) {
-    header("Refresh:0;url=../account_info.html");
+    header("Refresh:0;url=../home.html");
   } else {
     echo "<script>alert('您输入的用户名或密码有误');</script>";
-          header("Refresh:0;url=../account_login.html");
+          header("Refresh:0;url=../index.html");
   }
 
   closeConnect();
