@@ -108,10 +108,37 @@ a{
 
 #container {
 	position: absolute;
-	top: 75%;
+	top: 65%;
     left: 50%;
     margin-left: -260px;
     margin-top: -300px;
     
 	
 }
+
+#box{
+    position: absolute;
+    top:95%;
+    left:24%;
+    margin-top:-50px;
+}
+
+.parent {
+    width: 700px;
+    height: 500px;
+   
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    
+
+  }
+  
+  .child {
+    box-sizing: border-box;
+    background-color: white;
+    flex: 0 0 30%;
+    height: 230px;
+    border: 6px solid rgb(216, 216, 216);
+  }
