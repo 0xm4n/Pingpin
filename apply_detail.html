@@ -9,27 +9,42 @@
 
 <body>
     <div id="header">
-
+        <!-- logo -->
         <img id="logo_img" src="img/logo.png" alt="logo">
         <span id="seperator">|</span>
+        <!-- searching  -->
         <form action="">
-            <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
-            <img src="" alt="">
+          <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+          <a id="search_btn" href="#">
+            <img src="img/search-btn.png" alt="search" style="width: 30px;height: 30px;">
+          </a>
         </form>
-        <span class="header_tab" id="f1">
-            <a href="home.html">首页</a>
-        </span>
-        <span class="header_tab" id="f2">
-            <a href="apply.html">申请兼职</a>
-        </span>
-        <span class="header_tab" id="f3">
-            <a href="hiring.html">发布兼职</a>
-        </span>
-        <span class="header_tab" id="f4">我的兼职</span>
-        <span class="header_tab" id="logout"><a href="index.html">退出登录</a></span>
-        <img id="logout_icon" src="img/logout.png" alt="logout">
-
-    </div>
+        <!-- navigator -->
+        <!-- 用列表结构实现导航栏，实现下拉框 -->
+        <ul>
+          <li><a  href="home.html">首页</a></li>
+          <div class="dropdown">
+            <a href="#" class="dropbtn">申请兼职</a>
+            <div class="dropdown-content">
+              <a href="#">校内兼职</a>
+              <a href="#">企业兼职</a>
+              <a href="#">实验室兼职</a>
+            </div>
+          </div>
+          <li><a href="#">发布兼职</a></li>
+          <li><a href="#my">我的兼职</a></li>
+        </ul>
+        
+        <!-- log out -->
+        <!-- 修改log out：float：left -->
+        <div id="logoutdiv">
+          <span class="header_tab" id="logout">
+            <a href="index.html" style="color: #cccccc; text-decoration: none;">退出登录</a>
+          </span>
+          <img id="logout_icon" src="img/logout.png" alt="logout">
+        </div>
+    
+      </div>
 
     <div id="content">
         <div id="content_abstract">
