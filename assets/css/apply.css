@@ -269,7 +269,7 @@ ul.pagination li a{
     text-decoration: none;
 }
 
-ul.pagination li a.active{
+ul.pagination li active{
     background-color: #464C5B;
     color: #ffffff;
 }
