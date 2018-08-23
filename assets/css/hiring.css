@@ -153,11 +153,11 @@ input.type1{
     width: 350px;
 }
 
-textarea.type2{
+input.type2{
     padding: 5px 8px;
     border-radius: 2px;
     width: 350px;
-    vertical-align: middle;
+    height: 60px;
 }
 
 select{
