@@ -96,7 +96,6 @@ function Page(opt){
                 var page='',ele=null;
                 // page1：之前active的页码
                 var page1=parseInt(clickPages.elem.children('li.active').attr('page'));
-                // page1是之前active的li
                 if(isNaN(parseInt(txt)))
                 {
                     switch(txt){
@@ -111,7 +110,7 @@ function Page(opt){
                             }
                             else{
                                 clickPages.newPages('next',page1+1);
-                                ele=clickPages.elem.children('li.acitve');
+                                ele=clickPages.elem.children('li.active');
                             }
                             break;
                         case '上一页':
@@ -119,7 +118,7 @@ function Page(opt){
                                 return;
                             }
                             if(page1>=(clickPages.num-1)||page1<=3||clickPages.num<=6){
-                                ele=clickPages.elem.children('li.acitve').prev();
+                                ele=clickPages.elem.children('li.active').prev();
                             }
                             else{
                                 clickPages.newPages('prev',page1-1);
@@ -164,7 +163,7 @@ function Page(opt){
         },
 
         actPages:function (ele){
-            ele.addClass('acitve').siblings().removeClass('acitve');
+            ele.addClass('active').siblings().removeClass('active');
             return clickPages.elem.children('li.active').text();
         },
         JumpPages:function(){
@@ -203,7 +202,7 @@ function Page(opt){
             for(var n=0;n<3;n++)
             {
                 // htmlC保存了i-1,i,i+1的html代码
-                htmlC+='<li '+((n-1)==0?'class="acitve"':'')+' page="'+(i+n-1)+'"><a>'+(i+n-1)+'</a></li>';
+                htmlC+='<li '+((n-1)==0?'class="active"':'')+' page="'+(i+n-1)+'"><a>'+(i+n-1)+'</a></li>';
                 // htmlleft保存了2，3，4的html代码
                 htmlLeft+='<li '+((n+2)==i?'class="active"':'')+' page="'+(n+2)+'"><a>'+(n+2)+'</a></li>';
                 // htmlright保存了num-3,num-2,num-1的html代码
