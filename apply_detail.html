@@ -5,64 +5,30 @@
     <title>兼职详情</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./assets/css/apply_detail.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <!-- 这段代码的几个参数解释：
-width = device-width：宽度等于当前设备的宽度
-initial-scale：初始的缩放比例（默认设置为1.0）
-minimum-scale：允许用户缩放到的最小比例（默认设置为1.0）
-maximum-scale：允许用户缩放到的最大比例（默认设置为1.0）
-user-scalable：用户是否可以手动缩放（默认设置为no，因为我们不希望用户放大缩小页面）
- -->
 </head>
 
 <body>
     <div id="header">
-        <div class="width_limit">
-            <!-- logo -->
-            <a class="logo" href="#home">
-                <img id="logo_img" src="img/logo.png" alt="logo">
-                <!-- 建议删除这个span，好像作用不大 -->
-                <!-- <span id="seperator">|</span> -->
-            </a>
-    
-            <!-- log out -->
-            <!-- 修改log out：float：right -->
-            <div class="logoutdiv">
-                <a href="index.html" class="header_tab logout">退出登录</a>
-            </div>
-    
-            <!-- searching  -->
-            <div class="search">
-                <form action="">
-                    <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
-                    <a id="search_btn" href="#">
-                        <img src="img/search-btn.png" alt="search" style="width: 25px;height: 25px;">
-                    </a>
-                </form>
-            </div>
-            <!-- navigator -->
-            <!-- 用列表结构实现导航栏，实现下拉框 -->
-            <ul>
-                <li>
-                    <a href="home.html">首页</a>
-                </li>
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">申请兼职</a>
-                    <div class="dropdown-content">
-                        <a href="#">校内兼职</a>
-                        <a href="#">企业兼职</a>
-                        <a href="#">实验室兼职</a>
-                    </div>
-                </div>
-                <li>
-                    <a href="#">发布兼职</a>
-                </li>
-                <li>
-                    <a href="#my">我的兼职</a>
-                </li>
-            </ul>
-    
-        </div>
+
+        <img id="logo_img" src="img/logo.png" alt="logo">
+        <span id="seperator">|</span>
+        <form action="">
+            <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+            <img src="" alt="">
+        </form>
+        <span class="header_tab" id="f1">
+            <a href="home.html">首页</a>
+        </span>
+        <span class="header_tab" id="f2">
+            <a href="apply.html">申请兼职</a>
+        </span>
+        <span class="header_tab" id="f3">
+            <a href="hiring.html">发布兼职</a>
+        </span>
+        <span class="header_tab" id="f4">我的兼职</span>
+        <span class="header_tab" id="logout"><a href="index.html">退出登录</a></span>
+        <img id="logout_icon" src="img/logout.png" alt="logout">
+
     </div>
 
     <div id="content">
