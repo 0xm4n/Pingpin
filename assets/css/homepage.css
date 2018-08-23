@@ -134,14 +134,11 @@ a{
     
 
   }
-
+  
   .child {
-    width:200px;
-    border: 3px solid rgb(216, 216, 216);
-    padding:5px;
-    overflow-wrap: break-word;
-    margin:5px;    
+    box-sizing: border-box;
+    background-color: white;
+    flex: 0 0 30%;
+    height: 230px;
+    border: 6px solid rgb(216, 216, 216);
   }
-  
-  
-

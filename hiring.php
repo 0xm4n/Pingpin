@@ -100,13 +100,13 @@
 
                     <div class="row ">
                             <span>&nbsp;&nbsp; 其他要求:</span> 
-                            <textarea class="type2" name="other" maxlength=140 placeholder="请输入其他工作要求" ></textarea>
+                            <input class="type2" name="other" maxlength=140 placeholder="请输入其他工作要求" >
                     </div>
 
                     <div class="row ">
                             <span class="red_star"> *</span>
                             <span>工作内容:</span> 
-                            <textarea class="type2" name="content" maxlength=140 placeholder="请输入兼职工作内容" ></textarea>
+                            <input class="type2" name="content" maxlength=140 placeholder="请输入兼职工作内容" >
                     </div>
 
                     <div class="row ">
@@ -128,7 +128,7 @@
                     </div>
                     <div class="row ">
                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 备注:</span> 
-                            <textarea class="type2" name="remarks"maxlength=140 placeholder="其他信息" ></textarea>
+                            <input class="type2" name="remarks"maxlength=140 placeholder="其他信息" >
                     </div>
                 
             </div>
@@ -170,4 +170,3 @@
 </body>
 
 </html>
-
