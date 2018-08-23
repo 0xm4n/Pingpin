@@ -27,6 +27,7 @@
   } else {
     echo "<script>alert('您输入的用户名或密码有误');</script>";
           header("Refresh:0;url=../index.html");
+        
   }
 
   closeConnect();
