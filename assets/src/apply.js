@@ -2,7 +2,7 @@
 function Page(opt){}
 
 // 每页显示的数据个数
-var page=10;
+var page=4;
 
 function page_func(date){
     $.each(date, function(idx,obj){
@@ -19,26 +19,19 @@ function page_func(date){
         num:pageTotal,
         startNum:1,
         pageSize:page,
-        elem:$('.page'),
+        elem:$('.pagination'),
         callback:function(n){
             pagination(n,date);
         }
     });
 }
 
-$.getJSON({
-    type:"GET",
-    url:"./test.json"      //后端传入json文件的接口
-    async:false,
-    cache:false,
-    dateType:"json",
-    success:function(e){
-        if(e.date.date_list.length==0){
-            alert("暂无数据4");
-            return;
-        }
-        page_func(e.date.date_list);
+$.getJSON("./test.json",function(e){
+    if(e.date.date_list.length==0){
+        alert("暂无数据4");
+        return;
     }
+    page_func(e.date.date_list);
 })
 
 //展示兼职信息
@@ -64,7 +57,7 @@ function dateinfo(obj){
 }
 
 //控制当前页数对应的兼职信息
-function pagination(num.list){   //num是数字，list是json文件传入的date集合
+function pagination(num,list){   //num是数字，list是json文件传入的date集合
     // 清空原有兼职数据
     $(".content_body").html("");    
     $.each(list, function(idx,obj){
@@ -103,7 +96,6 @@ function Page(opt){
                 var page='',ele=null;
                 // page1：之前active的页码
                 var page1=parseInt(clickPages.elem.children('li.active').attr('page'));
-                page1是之前active的li
                 if(isNaN(parseInt(txt)))
                 {
                     switch(txt){
@@ -118,7 +110,7 @@ function Page(opt){
                             }
                             else{
                                 clickPages.newPages('next',page1+1);
-                                ele=clickPages.elem.children('li.acitve');
+                                ele=clickPages.elem.children('li.active');
                             }
                             break;
                         case '上一页':
@@ -126,7 +118,7 @@ function Page(opt){
                                 return;
                             }
                             if(page1>=(clickPages.num-1)||page1<=3||clickPages.num<=6){
-                                ele=clickPages.elem.children('li.acitve').prev();
+                                ele=clickPages.elem.children('li.active').prev();
                             }
                             else{
                                 clickPages.newPages('prev',page1-1);
@@ -171,7 +163,7 @@ function Page(opt){
         },
 
         actPages:function (ele){
-            ele.addClass('acitve').siblings().removeClass('acitve');
+            ele.addClass('active').siblings().removeClass('active');
             return clickPages.elem.children('li.active').text();
         },
         JumpPages:function(){
@@ -210,11 +202,11 @@ function Page(opt){
             for(var n=0;n<3;n++)
             {
                 // htmlC保存了i-1,i,i+1的html代码
-                htmlC+='<li '+((n-1)==0?'class="acitve"':'')+' page="'+(i+n-1)+'"><a>'+(i+n-1)+'</a></li>';
+                htmlC+='<li '+((n-1)==0?'class="active"':'')+' page="'+(i+n-1)+'"><a>'+(i+n-1)+'</a></li>';
                 // htmlleft保存了2，3，4的html代码
-                htmlLeft+='< '+((n+2)==i?'class="active"':'')+' page="'+(n+2)+'"><a>'+(n+2)+'</a></li>';
+                htmlLeft+='<li '+((n+2)==i?'class="active"':'')+' page="'+(n+2)+'"><a>'+(n+2)+'</a></li>';
                 // htmlright保存了num-3,num-2,num-1的html代码
-                htmlRight+='< '+((set.num+n-3)==i?'class="active"':'')+' page="'+(set.num+n-3)+'"><a>'+(set.num+n-3)+'</a></li>';
+                htmlRight+='<li '+((set.num+n-3)==i?'class="active"':'')+' page="'+(set.num+n-3)+'"><a>'+(set.num+n-3)+'</a></li>';
             }
 
             switch(type){
@@ -266,7 +258,7 @@ function Page(opt){
             html+='<li><a>下一页</a></li><li><a aria-label="Next">&raquo;</a></li>';
             if(this.num>5||this.num<3){
                 set.elem.html(html);
-                clickPages.init(num:set.num,elem:set.elem,callback:set.callback);
+                clickPages.init({num:set.num,elem:set.elem,callback:set.callback});
             }
         }
     }
@@ -279,7 +271,7 @@ function Page(opt){
         n=parseInt(set.num);
         var html='<li><a  aria-label="Previous">&laquo;</a></li><li><a>上一页</a></li>';
         for(var i=1;i<=n;i++){
-            if(i==set.startnum){
+            if(i==set.startNum){
                 html+='<li class="active" page="'+i+'"><a>'+i+'</a></li>';
             }
             else{
@@ -291,7 +283,6 @@ function Page(opt){
         clickPages.init();
     }
     else{
-        clickPages.newPages("jump",set.startnum)
+        clickPages.newPages("jump",set.startNum)
     }
-}
 }

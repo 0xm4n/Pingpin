@@ -55,29 +55,22 @@
   <div id="content">
     <!--主体内容头部标题-->
     <div class="content_header">
-      <h1 id="topic">华工校内兼职招聘相信息</h1>
+      <h1 id="topic">华工兼职招聘相信息</h1>
       <hr>
     </div>
     <!--主体内容表格-->
     <div class="content_body">
-
-
-      <!--招聘内容表格-->
-      <?php
-            while($row = mysql_fetch_array($result)){
-              echo"<div class=\"ptJob_Info\"><h2 class=\"pt_title\">".$row['title'].
-              "</h2><div class=\"clickToApply\"><span id=\"salary\"><span id=\"money\">".$row['reward'].
-              "</span><span></span></span><button id=\"apply_btn\">点击申请</button> </div><div><ul><li>
-              <span>工作时间：</span><span>".$row['time']."</span></li><li><span>兼职类型：</span><span>"
-              .$row['type']."</span> </li><li><span>工作地点：</span><span>".$row['place']."</span></li><li>
-              <span>学历要求：</span><span>".$row['education']."</span></li></ul></div></div>";
-             }
-             closeConnect();
-      ?>
+      <!-- 插入json信息 -->
     </div>
-
+    <!-- 分页 -->
+    <div class="page">
+      <ul class="pagination">
+      </ul>
+    </div>
   </div>
 
 </body>
 
+<script src="./assets/src/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/src/apply.js"></script>
 </html>
