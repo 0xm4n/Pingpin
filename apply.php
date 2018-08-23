@@ -1,5 +1,6 @@
 <?php
   include_once("PHP/mysql.php");
+  include_once("PHP/easySecure.php");
          
   session_start();
 
@@ -65,9 +66,11 @@
       <!--招聘内容表格-->
       <?php
             while($row = mysql_fetch_array($result)){
+              $str="apply_detail.php?id=".$row['id'];
+
               echo"<div class=\"ptJob_Info\"><h2 class=\"pt_title\">".$row['title'].
               "</h2><div class=\"clickToApply\"><span id=\"salary\"><span id=\"money\">".$row['reward'].
-              "</span><span></span></span><button id=\"apply_btn\">点击申请</button> </div><div><ul><li>
+              "</span></span><a href=".$str."><button id=\"apply_btn\">点击申请</button></a></div><div><ul><li>
               <span>工作时间：</span><span>".$row['time']."</span></li><li><span>兼职类型：</span><span>"
               .$row['type']."</span> </li><li><span>工作地点：</span><span>".$row['place']."</span></li><li>
               <span>学历要求：</span><span>".$row['education']."</span></li></ul></div></div>";

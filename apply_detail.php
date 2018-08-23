@@ -1,3 +1,35 @@
+<?php
+  include_once("PHP/mysql.php");
+  include_once("PHP/easySecure.php");
+         
+  session_start();
+
+  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
+    echo "<script>alert('请先登陆！');</script>";
+    header("Refresh:0;url=index.html");
+    exit();
+  }
+
+  $i = $_REQUEST['id'];
+
+  if(!is_numeric($i)){
+    echo "<script>alert('非法操作！');</script>";
+    header("Refresh:0;url=apply.php");
+    exit();
+  }
+
+  $id = lib_replace_end_tag($i);
+
+
+
+  getConnect();
+                    
+  $requireSQL = "SELECT * FROM information,contactinfo WHERE information.id=contactinfo.id AND information.id=".$id;
+                    
+  $result = mysql_query($requireSQL);
+  $row = mysql_fetch_array($result);
+?>
+
 <!doctype html>
 <html>
 
@@ -17,6 +49,28 @@ user-scalable：用户是否可以手动缩放（默认设置为no，因为我�
 
 <body>
     <div id="header">
+<<<<<<< HEAD:apply_detail.php
+
+        <img id="logo_img" src="img/logo.png" alt="logo">
+        <span id="seperator">|</span>
+        <form action="">
+            <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+            <img src="" alt="">
+        </form>
+        <span class="header_tab" id="f1">
+            <a href="home.php">首页</a>
+        </span>
+        <span class="header_tab" id="f2">
+            <a href="apply.php">申请兼职</a>
+        </span>
+        <span class="header_tab" id="f3">
+            <a href="hiring.php">发布兼职</a>
+        </span>
+        <span class="header_tab" id="f4">我的兼职</span>
+        <span class="header_tab" id="logout"><a href="index.html">退出登录</a></span>
+        <img id="logout_icon" src="img/logout.png" alt="logout">
+
+=======
         <div class="width_limit">
             <!-- logo -->
             <a class="logo" href="#home">
@@ -63,13 +117,14 @@ user-scalable：用户是否可以手动缩放（默认设置为no，因为我�
             </ul>
     
         </div>
+>>>>>>> fe23f018e9a634c195d368d61945765183853e7a:apply_detail.html
     </div>
 
     <div id="content">
         <div id="content_abstract">
-            <h1 id="pt_title">急招 秒到账 二年级男生暑假语文家教</h1>
-            <div id="salary">2000-3000元/月</div>
-            <div id="require">学历：本科 | 性别要求：女 | 其他要求：工作细心，有耐心，有恒心</div>
+            <h1 id="pt_title"><?php echo $row['title']?></h1>
+            <div id="salary"><?php echo $row['reward']?></div>
+            <div id="require">学历：<?php echo $row['education']?> | 性别要求：<?php echo $row['sex']?> | 其他要求：<?php echo $row['other']?></div>
         </div>
             
         <div id="cotent_detail">
@@ -80,27 +135,27 @@ user-scalable：用户是否可以手动缩放（默认设置为no，因为我�
             <div class="row">
                 <span class="sub_title2">【工作内容】</span>
                 <br>
-                <span class="sub_content2">根据客服小哥哥小姐姐的指导完成，完成后发截图给客服审核，全程简单轻松，在家躺着赚钱.</span>
+                <span class="sub_content2"><?php echo $row['content']?></span>
             </div>
             <div class="row">
                 <span class="sub_title2">【兼职要求】</span>
                 <br>
-                <span class="sub_content2">学历：本科 | 性别要求：女 | 其他要求：工作细心，有耐心，有恒心</span>
+                <span class="sub_content2">学历：<?php echo $row['education']?> | 性别要求：<?php echo $row['sex']?> | 其他要求：<?php echo $row['other']?></span>
             </div>
             <div class="row">
                 <span class="sub_title2">【工作时间】</span>
                 <br>
-                <span class="sub_content2">9:00-23:00 基本上全天候</span>
+                <span class="sub_content2"><?php echo $row['time']?></span>
             </div>
             <div class="row">
                 <span class="sub_title2">【工作地点】</span>
                 <br>
-                <span class="sub_content2">华南理工大学C10宿舍</span>
+                <span class="sub_content2"><?php echo $row['place']?></span>
             </div>
             <div class="row">
                 <span class="sub_title2">【薪资待遇】</span>
                 <br>
-                <span class="sub_content2">120元/天</span>
+                <span class="sub_content2"><?php echo $row['reward']?></span>
             </div>
             <div class="content_header">
                 <span id="sub_title">联系方式</span>
@@ -109,22 +164,22 @@ user-scalable：用户是否可以手动缩放（默认设置为no，因为我�
             <div class="row">
                 <span class="sub_title2">【联系人】</span>
                 <br>
-                <span class="sub_content2">♂罗♂凡♂</span>
+                <span class="sub_content2"><?php echo $row['contacts']?></span>
             </div>
             <div class="row">
                 <span class="sub_title2">【咨询电话】</span>
                 <br>
-                <span class="sub_content2">♂♂♂♂凡♂♂♂♂</span>
+                <span class="sub_content2"><?php echo $row['phone']?></span>
             </div>
             <div class="row">
                 <span class="sub_title2">【简历投递邮箱】</span>
                 <br>
-                <span class="sub_content2">♂♂♂♂♂♂♂♂@凡.com</span>
+                <span class="sub_content2"><?php echo $row['email']?></span>
             </div>
         </div>
         <button id="apply_btn">点击申请</button>
     </div>
-
+    <?php closeConnect(); ?>
 </body>
 
 </html>
