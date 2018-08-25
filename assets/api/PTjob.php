@@ -21,6 +21,8 @@ include_once("Publishment.php");
 
         $time = 1000;
 
+        $username="testuser";
+
         $res3 = addPublishment($username,$id,$time);
 
         //检测信息

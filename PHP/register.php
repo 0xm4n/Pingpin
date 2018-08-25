@@ -1,6 +1,7 @@
 <?php
     include_once("mysql.php");
     include_once("easySecure.php");
+    include_once("../assets/api/User.php");
 
     function checklen($str,$name,$len){
         if(mb_strlen($str,'utf8')>$len){
@@ -58,6 +59,8 @@
     $sex = lib_replace_end_tag($_POST['sex']);
     checklen($sex,"性别",$len2);
 
+    
+
 
     $userNameSQL = "SELECT * FROM user WHERE username = '$username'";
     getConnect();
@@ -69,42 +72,5 @@
 	
     }
 
-    $registerSQL1 = "INSERT INTO user VALUES('$username', '$password')";
-    
-    mysql_query($registerSQL1);
-    $err1 = mysql_error();
-    if($err1){
-        echo "<script>alert('关键注册信息错误！');</script>";
-        header("Refresh:0;url=../register.html");
-	    exit();
-    }
-
-
-    $registerSQL2 = "INSERT INTO userinfo VALUES('$username', '$name', '$phone', '$sex')";
-    mysql_query($registerSQL2);
-    $err2 = mysql_error();
-    if($err2){        
-        $deleteSQL = "DELETE FROM user WHERE username = '$username'";
-        mysql_query($deleteSQL);
-        echo $err2;
-        //echo "<script>alert('其它注册信息错误！');</script>";
-        header("Refresh:10;url=../register.html");
-	    exit();
-    }
-
-    $userSQL1 = "SELECT * FROM user WHERE username = '$username'";
-    $userSQL2 = "SELECT * FROM userinfo WHERE username = '$username'";
-
-    $userResult1 = mysql_query($userSQL1);
-    $userResult2 = mysql_query($userSQL2);
-
-    if (mysql_num_rows($userResult1) > 0 && mysql_num_rows($userResult2) > 0) {
-        echo "<script>alert('用户注册成功');</script>";
-        header("Refresh:0;url=../index.html");
-    } 
-    else {
-        echo "<script>alert('用户注册失败');</script>";
-        header("Refresh:0;url=../register.html");
-    }
-    closeConnect();
+    addUser($username,$password,$name,$phone,$sex);
 ?>
