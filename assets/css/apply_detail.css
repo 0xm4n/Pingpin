@@ -26,7 +26,7 @@ form {
 }
 /* 固定顶部栏 */
 .width_limit{
-    min-width: 768px;
+    min-width: 885px;
     max-width: 960px;
     margin: 0 auto;
 }

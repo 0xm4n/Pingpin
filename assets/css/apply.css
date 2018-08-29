@@ -26,7 +26,7 @@ form {
 }
 /* 固定顶部栏 */
 .width_limit{
-    min-width: 768px;
+    min-width: 827px;
     max-width: 960px;
     margin: 0 auto;
 }
@@ -63,7 +63,7 @@ form {
     top: 45px;
 }
 #search_input {
-    width: 190px;
+    width: 158px;
     margin-left: 30px;
     margin-top: 27px;
     margin-bottom: 20px;
@@ -90,7 +90,7 @@ form {
 /* 修改后的导航栏css */
 #header ul{
     list-style-type: none;
-    margin-left: 43px;
+    margin-left: 1px;
     margin-top: 0px;
     padding: 0;
     overflow: hidden;
