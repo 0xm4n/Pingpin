@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test html</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="./assets/css/register.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="right_header">
+            <span class="redirection"> <a href="home.php"> 首 页</a></span>
+            <span class="separator"> | </span>
+            <span class="redirection"> <a href="index.html">已有账户? 去登录</a></span>
+        </div>
+
+        <img id="logo_img" src="img/logo.png" alt="logo">
+
+        <span id="banner">好工作尽在Ping聘</span>
+        <span class="separator"></span>
+        <span id="welcome">| 欢迎注册</span>
+
+
+    </div>
+
+    <div id="tab_content">
+        <span id="tips">请填写以下信息</span>
+        <form method="POST" action="/PHP/register.php">
+            <div class="block">
+                <input type="text" name="username" placeholder="请输入用户名">
+            </div>
+            <div class="block">
+                <input type="password" name="password" placeholder="请输入密码">
+            </div>
+            <div class="block">
+                <input type="password" name="verify" placeholder="请再次输入密码">
+            </div>
+            <div class="block">
+                <input type="text" name="name" placeholder="请输入真实姓名">
+            </div>
+
+            <div class="block" id="contact">
+                <input type="tel" name="phone" placeholder="请输入联系方式">
+            </div>
+
+            <span class="block-sex" id="b-sex">
+                <label for="sex">性别</label>
+                <input name="sex" type="radio" checked="checked" />
+                <span class="sex_label">男</span>
+                <input name="sex" type="radio" />
+                <span class="sex_label">女</span>
+                <input name="sex" type="radio" />
+                <span class="sex_label">保密</span>
+            </span>
+            <br>
+
+            <button id="btn_register" onclick="register()">提 交</button>
+        </form>
+    </div>
+
+</body>
+
+
+
+
+</html>

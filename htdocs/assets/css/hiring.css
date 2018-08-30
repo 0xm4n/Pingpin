@@ -1,0 +1,92 @@
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
+}
+
+form {
+    margin: 0px;
+    display: inline;
+}
+
+
+/*主体逻辑分区宽度和居中设置*/
+#content
+{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+/*主体头部标题和水平分割线*/
+.content_header{
+    margin-top: 30px;
+
+}
+
+#topic{
+    font-size: 20px;
+    color: #385D9B;
+    text-align: start;
+}
+
+hr{
+    margin-top: 10px;
+    height: 0.8px;
+    background-color: #cccccc;
+}
+
+.content_body{
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 10px;
+
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.row{
+    margin: 20px 0px;
+    margin-left: 15px;
+}
+
+.red_star{
+    color:red;
+}
+input.type1{
+    padding: 5px 8px;
+    border-radius: 2px;
+    width: 350px;
+}
+
+textarea.type2{
+    padding: 5px 8px;
+    border-radius: 2px;
+    width: 350px;
+    vertical-align: middle;
+}
+
+select{
+    padding:4px 5px;
+    border-radius: 3px;
+}
+
+button{
+    position: absolute;
+    padding: 8px 22px;
+    left: 35%;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+    background-color: #385D9B;
+    border-color: #385D9B;
+}
+
+a{
+    color:#cccccc;
+    text-decoration: none;
+}

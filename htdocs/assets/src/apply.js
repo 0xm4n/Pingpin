@@ -26,30 +26,49 @@ function page_func(date){
     });
 }
 
-$.getJSON("./test.json",function(e){
-    if(e.date.date_list.length==0){
+$.getJSON("./PHP/testjson.php",function(e){
+    if(e.length==0){
         alert("暂无数据4");
         return;
     }
-    page_func(e.date.date_list);
+    page_func(e);
 })
 
 //展示兼职信息
 function dateinfo(obj){
+    // var detail='<div class="ptJob_Info">'+
+    //                 '<h2 class="pt_title">'+
+    //                     obj.title+
+    //                 '</h2>'+
+    //                 '<div class="clickToApply">'+
+    //                     '<span id="salary"><span id="money">'+obj.reward+'</span></span>'+
+    //                     '<button id="apply_btn">点击申请</button>'+
+    //                 '</div>'+
+    //                 '<div>'+
+    //                     '<ul>'+
+    //                         '<li><span>工作时间：</span><span>'+obj.time+'</span></li>'+
+    //                         '<li><span>兼职类型：</span><span>'+obj.pjtype+'</span></li>'+
+    //                         '<li><span>工作地点：</span><span>'+obj.place+'</span></li>'+
+    //                         '<li><span>学历要求：</span><span>'+obj.education+'</span></li>'+
+    //                     '</ul>'+
+    //                 '</div>'+
+    //             '</div>';
+
     var detail='<div class="ptJob_Info">'+
                     '<h2 class="pt_title">'+
-                        obj.title+
+                        obj.id+
                     '</h2>'+
                     '<div class="clickToApply">'+
-                        '<span id="salary"><span id="money">'+obj.reward+'</span></span>'+
+                        '<span id="salary"><span id="money">'+obj.contacts+'</span></span>'+
                         '<button id="apply_btn">点击申请</button>'+
                     '</div>'+
                     '<div>'+
                         '<ul>'+
-                            '<li><span>工作时间：</span><span>'+obj.time+'</span></li>'+
-                            '<li><span>兼职类型：</span><span>'+obj.pjtype+'</span></li>'+
-                            '<li><span>工作地点：</span><span>'+obj.place+'</span></li>'+
-                            '<li><span>学历要求：</span><span>'+obj.education+'</span></li>'+
+                            '<li><span>id：</span><span>'+obj.id+'</span></li>'+
+                            '<li><span>联系人：</span><span>'+obj.contacts+'</span></li>'+
+                            '<li><span>phone：</span><span>'+obj.phone+'</span></li>'+
+                            '<li><span>email：</span><span>'+obj.email+'</span></li>'+
+                            '<li><span>otherway：</span><span>'+obj.otherway+'</span></li>'+
                         '</ul>'+
                     '</div>'+
                 '</div>';
@@ -202,11 +221,11 @@ function Page(opt){
             for(var n=0;n<3;n++)
             {
                 // htmlC保存了i-1,i,i+1的html代码
-                htmlC+='<li '+((n-1)==0?'class="active"':'')+' page="'+(i+n-1)+'"><a>'+(i+n-1)+'</a></li>';
+                htmlC+='<li '+((n-1)==0?'class="active"':'')+' page="'+(i+n-1)+'"><a '+((n-1)==0?'class="active"':'')+'>'+(i+n-1)+'</a></li>';
                 // htmlleft保存了2，3，4的html代码
-                htmlLeft+='<li '+((n+2)==i?'class="active"':'')+' page="'+(n+2)+'"><a>'+(n+2)+'</a></li>';
+                htmlLeft+='<li '+((n+2)==i?'class="active"':'')+' page="'+(n+2)+'"><a '+((n+2)==i?'class="active"':'')+'>'+(n+2)+'</a></li>';
                 // htmlright保存了num-3,num-2,num-1的html代码
-                htmlRight+='<li '+((set.num+n-3)==i?'class="active"':'')+' page="'+(set.num+n-3)+'"><a>'+(set.num+n-3)+'</a></li>';
+                htmlRight+='<li '+((set.num+n-3)==i?'class="active"':'')+' page="'+(set.num+n-3)+'"><a '+((set.num+n-3)==i?'class="active"':'')+'>'+(set.num+n-3)+'</a></li>';
             }
 
             switch(type){
@@ -233,21 +252,21 @@ function Page(opt){
 						}
 						break;
 					case "«" :
-						html+='<li class="active" page="1"><a>1</a></li>'+htmlLeft+HL+'<li page="'+set.num+'"><a>'+set.num+'</a></li>';
+						html+='<li class="active" page="1"><a class="active">1</a></li>'+htmlLeft+HL+'<li page="'+set.num+'"><a>'+set.num+'</a></li>';
 						break;
 					case "»" :
-						html+='<li page="1"><a>1</a></li>'+HL+htmlRight+'<li class="active" page="'+set.num+'"><a>'+set.num+'</a></li>';
+						html+='<li page="1"><a>1</a></li>'+HL+htmlRight+'<li class="active" page="'+set.num+'"><a class="active">'+set.num+'</a></li>';
 						break;
 					case "jump" :
 						if(i<=4){
 							if(i==1){
-								html+='<li class="active" page="1"><a>1</a></li>'+htmlLeft+HL+'<li page="'+set.num+'"><a>'+set.num+'</a></li>';
+								html+='<li class="active" page="1"><a class="active">1</a></li>'+htmlLeft+HL+'<li page="'+set.num+'"><a>'+set.num+'</a></li>';
 							}else{
 								html+='<li page="1"><a>1</a></li>'+htmlLeft+HL+'<li page="'+set.num+'"><a>'+set.num+'</a></li>';
 							}
 						}else if((i>=set.num-3)&&(set.num>=7)){
 							if(i==set.num){
-								html+='<li page="1"><a>1</a></li>'+HL+htmlRight+'<li class="active" page="'+set.num+'"><a>'+set.num+'</a></li>';
+								html+='<li page="1"><a>1</a></li>'+HL+htmlRight+'<li class="active" page="'+set.num+'"><a class="active">'+set.num+'</a></li>';
 							}else{
 								html+='<li page="1"><a>1</a></li>'+HL+htmlRight+'<li page="'+set.num+'"><a>'+set.num+'</a></li>';
 							}
@@ -272,7 +291,7 @@ function Page(opt){
         var html='<li><a>&laquo;</a></li><li><a>上一页</a></li>';
         for(var i=1;i<=n;i++){
             if(i==set.startNum){
-                html+='<li class="active" page="'+i+'"><a>'+i+'</a></li>';
+                html+='<li class="active" page="'+i+'"><a class="active">'+i+'</a></li>';
             }
             else{
                 html+='<li page="'+i+'"><a>'+i+'</a></li>';
@@ -286,3 +305,13 @@ function Page(opt){
         clickPages.newPages("jump",set.startNum)
     }
 }
+
+// 添加监视scroll的监听器，为导航栏添加一个负的left定位
+ document.addEventListener("scroll",setPosition);
+ window.addEventListener("resize",setPosition);
+ function setPosition(){
+    //  var scroll_left=document.body.scrollLeft;
+    // 在chrome浏览器中不是document.body
+    var scroll_left=document.documentElement.scrollLeft;
+     $("#header").css('left',~scroll_left+1);
+ }

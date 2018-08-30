@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>申请兼职</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./assets/css/apply.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- 这段代码的几个参数解释：
+width = device-width：宽度等于当前设备的宽度
+initial-scale：初始的缩放比例（默认设置为1.0）
+minimum-scale：允许用户缩放到的最小比例（默认设置为1.0）
+maximum-scale：允许用户缩放到的最大比例（默认设置为1.0）
+user-scalable：用户是否可以手动缩放（默认设置为no，因为我们不希望用户放大缩小页面）
+ -->
+</head>
+
+<body>
+  <div id="header">
+    <div class="width_limit">
+          <!-- logo -->
+    <a class="logo" href="#home">
+        <img id="logo_img" src="img/logo.png" alt="logo">
+        <!-- 建议删除这个span，好像作用不大 -->
+        <!-- <span id="seperator">|</span> -->
+    </a>
+
+     <!-- log out -->
+    <!-- 修改log out：float：right -->
+    <div class="logoutdiv">
+      <a href="index.html" class="header_tab logout">退出登录</a>
+    </div>
+
+    <!-- searching  -->
+    <div class="search">
+        <form action="">
+            <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+            <a id="search_btn" href="#">
+              <img src="img/search-btn.png" alt="search" style="width: 25px;height: 25px;">
+            </a>
+          </form>
+    </div>
+    <!-- navigator -->
+    <!-- 用列表结构实现导航栏，实现下拉框 -->
+    <ul>
+      <li><a  href="home.html">首页</a></li>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">申请兼职</a>
+        <div class="dropdown-content">
+          <a href="#">校内兼职</a>
+          <a href="#">企业兼职</a>
+          <a href="#">实验室兼职</a>
+        </div>
+      </div>
+      <li><a href="#">发布兼职</a></li>
+      <li><a href="#my">我的兼职</a></li>
+    </ul>
+
+    </div>
+  </div>
+
+  <div id="content">
+    <!--主体内容头部标题-->
+    <div class="content_header">
+      <h1 id="topic">华工兼职招聘相信息</h1>
+      <hr>
+    </div>
+    <!--主体内容表格-->
+    <div class="content_body">
+
+
+      <!--招聘内容表格-->
+      <div class="ptJob_Info">
+        <!--招聘标题-->
+        <h2 class="pt_title">急招 秒到账 二年级男生暑假语文家教</h2>
+        <!--招聘信息右侧浮动申请框-->
+        <div class="clickToApply">
+          <span id="salary">
+            <span id="money">60</span>
+            <span> 元 / 小时</span>
+          </span>
+          <a href="apply_detail.html"><button id="apply_btn">点击申请</button></a>          
+        </div>
+        <!--招聘信息摘要-->
+        <div>
+          <ul>
+            <li>
+              <span>工作时间：</span><span>长期可做 </span>
+            </li>
+            <li>
+              <span>兼职类型：</span><span>家教</span>
+            </li>
+            <li>
+              <span>工作地点：</span><span>广州火车站</span>
+            </li>
+            <li>
+              <span>学历要求：</span><span>大二及以上</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!--招聘内容表格-->
+      <div class="ptJob_Info">
+        <!--招聘标题-->
+        <h2 class="pt_title">广州科悦科技有限公司招聘排版员</h2>
+        <!--招聘信息右侧浮动申请框-->
+        <div class="clickToApply">
+          <span id="salary">
+            <span id="money">120</span>
+            <span> 元 / 天</span>
+          </span>
+          <button id="apply_btn">点击申请</button>
+        </div>
+        <!--招聘信息摘要-->
+        <div>
+          <ul>
+            <li>
+              <span>工作时间：</span><span>暑假期间，周一到周五，早8晚5</span>
+            </li>
+            <li>
+              <span>兼职类型：</span><span>校外兼职</span>
+            </li>
+            <li>
+              <span>工作地点：</span><span>五山</span>
+            </li>
+            <li>
+              <span>学历要求：</span><span>本科生</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--招聘内容表格-->
+      <div class="ptJob_Info">
+        <!--招聘标题-->
+        <h2 class="pt_title">西区饭堂服务员暑假兼职</h2>
+        <!--招聘信息右侧浮动申请框-->
+        <div class="clickToApply">
+          <span id="salary">
+            <span id="money">18.3</span>
+            <span> 元 / 小时</span>
+          </span>
+          <button id="apply_btn">点击申请</button>
+        </div>
+        <!--招聘信息摘要-->
+        <div>
+          <ul>
+            <li>
+              <span>工作时间：</span><span>暑假期间，根据学生空闲时间安排 </span>
+            </li>
+            <li>
+              <span>兼职类型：</span><span>校内兼职</span>
+            </li>
+            <li>
+              <span>工作地点：</span><span>西区饭堂</span>
+            </li>
+            <li>
+              <span>学历要求：</span><span>本科生</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!--招聘内容表格-->
+      <div class="ptJob_Info">
+        <!--招聘标题-->
+        <h2 class="pt_title">建筑科学重点实验室问卷调查员暑期兼职</h2>
+        <!--招聘信息右侧浮动申请框-->
+        <div class="clickToApply">
+          <span id="salary">
+            <span id="money">500</span>
+            <span> 元 / 人</span>
+          </span>
+          <button id="apply_btn">点击申请</button>
+        </div>
+        <!--招聘信息摘要-->
+        <div>
+          <ul>
+            <li>
+              <span>工作时间：</span><span>长期可做 </span>
+            </li>
+            <li>
+              <span>兼职类型：</span><span>校内兼职</span>
+            </li>
+            <li>
+              <span>工作地点：</span><span>建筑重点科学实验室</span>
+            </li>
+            <li>
+              <span>学历要求：</span><span>本科生</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <!-- 分页 -->
+    <div class="page">
+      <ul class="pagination">
+        <li><a href="#pre">«</a></li>
+        <li><a href="#1">1</a></li>
+        <li><a class="active" href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+        <li><a href="#4">4</a></li>
+        <li><a href="#5">5</a></li>
+        <li><a href="#6">6</a></li>
+        <li><a href="#7">7</a></li>
+        <li><a href="#next">»</a></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

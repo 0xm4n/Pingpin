@@ -1,0 +1,187 @@
+.mainBackground {
+    position: absolute;
+    border: 0px;
+    padding: 0px;
+    margin-top: -25px;
+    margin-left: -10px;
+    height: 100%;
+    width: 100%;
+    min-height: 1000px;
+    min-width: 960px;
+    background-image: url("../../src/img/timg.jpeg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    filter: none;
+}
+
+.logo {
+    position: absolute;
+    top: 45px;
+    left: 15%;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+.Sign{
+    top: 45px;
+    right: 15%;
+    height: 35px;
+    width: 143px;
+    position: absolute;
+    font-size: 15px;
+}
+
+.SignInButton{
+    top: 5px;
+    left: 10px;
+    position: absolute;
+}
+
+.SignUpButton{
+    top: 5px;
+    right: 10px;
+    position: absolute;
+}
+
+.font{
+    font-family: 微软雅黑;
+    color:white;
+}
+
+.divider{
+    top: -15px;
+    left: 65px;
+    font-size: 18px;
+    position: absolute;
+
+}
+
+.mainText{
+    top: 25%;
+    right: 35%;
+    font-size: 25px;
+    position: absolute;
+    color:white;
+}
+
+a{
+    text-decoration:none;
+}
+
+.blurground{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+}
+
+.loginBackground{
+    text-align: center;
+}
+
+.registerBackground{
+    text-align: center;
+}
+
+.loginSite{
+    position: relative;
+    width: 450px;
+    height: 510px;
+    top: 200px;
+    background-color: white;
+    z-index: 1002;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    animation: Gradual 1s;
+    -webkit-animation: Gradual 1s;
+}
+
+.registerSite{
+    position: relative;
+    width: 450px;
+    height: 580px;
+    top: 200px;
+    background-color: white;
+    z-index: 1002;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    animation: Gradual 1s;
+    -webkit-animation: Gradual 1s;
+}
+
+@keyframes Gradual{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes Gradual{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.Title{
+    position: relative;
+    top: 20px;
+    margin-bottom: 50px;
+}
+
+.divideLine{
+    position:relative;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: black;
+    width: 360px;
+    height: 5px;
+    margin-top: 30px;
+}
+
+.inputBox{
+    position: relative;
+    width: 340px;
+    height: 40px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    margin-top: 30px;
+}
+
+.mainButton{
+    position: relative;
+    margin-top: 30px;
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: darkcyan;
+    color: white;
+}
+
+.Text{
+    color: darkgrey;
+}
+
+.Guide{
+    position: relative;
+    left: 120px;
+    width: 100px;
+    height: 30px;
+    background-color:darkcyan;
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+}

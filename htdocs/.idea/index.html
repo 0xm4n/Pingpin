@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆界面</title>
+    <!--CSS-->
+    <link type="text/css" rel="stylesheet" href=./assets/css/index.css>
+</head>
+
+<body>
+<!--主页-->
+<div id="background" class="mainBackground" style="filter:none;">
+    <a class="font logo">BlockChain</a>
+    <nav class="Sign">
+        <a href="javasript:void(0)" class="font SignInButton" onclick="SignIn()">Sign In</a>
+        <p class="font divider">|</p>
+        <a href="javasript:void(0)" class="font SignUpButton" onclick="SignUp()">Sign Up</a>
+    </nav>
+    <p class="mainText">What do you know about Blockchain?</p>
+</div>
+
+<div id="blurground" class="blurground" style="filter:none;" onclick="Main()"></div>
+
+<!--登陆界面-->
+<div class="loginBackground">
+    <div id="loginSite" class="loginSite" style="display:none;">
+        <h1 class="Text Title">Login in</h1>
+        <div class="divideLine"></div>
+        <input id="usernameIn" type="text" name="usernameIn" class="inputBox" placeholder="请输入用户名">
+        <input id="passwordIn" type="password" name="passwordIn" class="inputBox" placeholder="请输入密码">
+        <button class="mainButton" onclick="login()">登录</button>
+        <div class="divideLine"></div>
+        <p class="Text">还未注册?</p>
+        <button class="Guide" onclick="SignUp()">注册</button>
+    </div>
+</div>
+
+<!--注册界面-->
+<div class="registerBackground">
+    <div id="registerSite" class="registerSite" style="display: none">
+        <h1 class="Text Title">Join us</h1>
+        <div class="divideLine"></div>
+        <input id="usernameRe" type="text" name="usernameRe" class="inputBox" placeholder="请输入用户名">
+        <input id="passwordRe" type="password" name="passwordRe" class="inputBox" placeholder="请输入密码">
+        <input id="verifyRe" type="verify" name="verifyRe" class="inputBox" placeholder="请再次输入密码">
+        <button class="mainButton" onclick="register()">注册</button>
+        <div class="divideLine"></div>
+        <p class="Text">已有账号？?</p>
+        <button class="Guide" onclick="SignIn()">登录</button>
+    </div>
+</div>
+
+   <!--JavaScript-->
+    <script src="./assets/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src=./assets/js/index.js></script>
+
+</body>
+</html>

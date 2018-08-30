@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>BlockChain</title>
+    <!--CSS-->
+    <link type="text/css" rel="stylesheet" href=./assets/css/main.css>
+</head>
+
+<body>
+<div class="main">
+
+    <!--主页-->
+    <div id="background" class="background">
+
+        <!--侧边导航栏-->
+        <div id="aside" class="aside" style="display:none;">
+            <div class="asideTitle">BlockChain</div>
+            <!--公共机构-->
+            <div class="asideListTitle" onclick="expand(this)">
+                <div class="asideListTitleIcon PublicIcon"></div>
+                <div class="asideListTitleWord">公共机构</div>
+                <img src="src/img/arrow.png" class="StatusIcon" data-expand="false"/>
+            </div>
+            <ul class="asideListContent" data-expand="false">
+                <li class="asideListItem">医院</li>
+                <li class="asideListItem">保险公司</li>
+                <li class="asideListItem">其它</li>
+            </ul>
+
+            <!--用户中心-->
+            <div class="asideListTitle" onclick="expand(this)">
+                <div class="asideListTitleIcon UserIcon"></div>
+                <div class="asideListTitleWord">用户中心</div>
+                <img src="src/img/arrow.png" class="StatusIcon" data-expand="false"/>
+            </div>
+            <ul class="asideListContent" data-expand="false">
+                <li class="asideListItem">个人病历</li>
+                <li class="asideListItem">其它信息</li>
+                <li class="asideListItem">个人信息</li>
+            </ul>
+
+            <!--资料编辑-->
+            <div class="asideListTitle" onclick="expand(this)">
+                <div class="asideListTitleIcon SettingIcon"></div>
+                <div class="asideListTitleWord">资料编辑</div>
+                <img src="src/img/arrow.png" class="StatusIcon" data-expand="false"/>
+            </div>
+            <ul class="asideListContent" data-expand="false">
+                <li class="asideListItem">个人资料</li>
+                <li class="asideListItem">系统设置</li>
+            </ul>
+        </div>
+
+        <!--主栏-->
+        <div id="text" class="text">
+            <!--顶栏-->
+            <div id="head" class="head">
+
+                <div class="MenuButton">
+                    <button class="hamburger" onclick="showAside()">
+                        <span></span>
+                    </button>
+                </div>
+
+                <div id="LogoutButton">
+                    <a href="index.html">
+                        <font color="white">退出登录</font>
+                    </a>
+                </div>
+            </div>
+
+            <!--主体内容-->
+            <div class="mainContent">
+                <!--个人病历-->
+                <div class="usercase">
+                    <!--内容栏-->
+                    <div id="content" class="content">
+                        <div class="TextTitle">个人病历</div>
+                        <div class="divideLine"></div>
+                    </div>
+
+                    <!--个人病历一-->
+                    <div class="contentTitle" onclick="showDetail()">
+                        <div class="asideListTitleIcon PublicIcon"></div>
+                        <div class="contentTitleWord">
+                            2017年7月3日
+                            &nbsp&nbsp广州省人民医院
+                            &nbsp&nbsp内科张三</div>
+                        <img src="src/img/arrow.png" class="StatusIcon"/>
+                    </div>
+
+                    <div class="contentTitle" onclick="expand(this)">
+                        <div class="asideListTitleIcon PublicIcon"></div>
+                        <div class="contentTitleWord">个人病历二</div>
+                        <img src="src/img/arrow.png" class="StatusIcon" data-expand="false"/>
+                    </div>
+                    <ul class="contentDetail" data-expand="false">
+                        <li class="contentDetailItem">时间：2017年7月3日</li>
+                        <li class="contentDetailItem">地点：广州省中医院</li>
+                        <li class="contentDetailItem">主治医生：外科 李四</li>
+                    </ul>
+
+                    <div class="contentTitle" onclick="expand(this)">
+                        <div class="asideListTitleIcon PublicIcon"></div>
+                        <div class="contentTitleWord">个人病历三</div>
+                        <img src="src/img/arrow.png" class="StatusIcon" data-expand="false"/>
+                    </div>
+                    <ul class="contentDetail" data-expand="false">
+                        <li class="contentDetailItem">时间：2016年8月1日</li>
+                        <li class="contentDetailItem">地点：广州省人民医院</li>
+                        <li class="contentDetailItem">主治医生：急症 刘某</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--详细信息-->
+        <div id="contentDetails" class="contentDetails" style="display: none">
+            <div class="TitleTab">
+                <a id="title1" class="DetailTitle title1" href="javasript:void(0)" onclick="showDetails()">
+                    详细信息
+                </a>
+                <a id="title2" class="DetailTitle title2" href="javasript:void(0)" onclick="showSend()">
+                    发送
+                </a>
+            </div>
+
+            <!--个人病例详细信息-->
+            <div id="DetailsContent" class="DetailsContent" style="display:inline-block">
+                <h1 class="DetailContentTitle">个人病历</h1>
+                <div class="DetailContentWords">
+                    病人名称：刘二<br>
+                    诊断时间：2018年12月29日<br>
+                    诊断机构：广州省人民医院<br>
+                    诊断医生：牙科 张三<br>
+                </div>
+
+                <div class="DetailContentWays">
+                    诊断内容：牙周炎<br>
+                    治疗方法：服用抗生素<br>
+                </div>
+            </div>
+
+            <!--发送病例-->
+            <div id="SendContent" class="SendContent" style="display:none">
+                <h1 class="SendContentTitle">发送病历</h1>
+                <div class="SendContentWords">发送地址 :</div>
+                <input id="Destinationaddr" type="text" name="Destinationaddr" class="inputBox" placeholder="请输入目标地址">
+                <button class="sendButton" onclick="send()">发送</button>
+            </div>
+
+        </div>
+        <div id="blurground" class="blurground" style="filter:none;" onclick="Main()"></div>
+
+    </div>
+</div>
+    <!--JavaScript-->
+    <script src="./assets/js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src=./assets/js/main.js></script>
+</body>
+</html>

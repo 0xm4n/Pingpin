@@ -1,0 +1,503 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration:none;
+}
+
+.background{
+    display: flex;
+    --head-height: 70px;
+    --shallow-theme-color: #464C5B;
+    height: 100%;
+    width: 100%;
+ /*   height: calc(100vh - var(--head-height));*/
+    display: flex;
+}
+
+.aside{
+    width: 210px;
+    background-color: white;
+    height: 100%;
+    overflow: auto;
+    user-select: none;
+    animation: Gradual 1s;
+    -webkit-animation: Gradual 1s;
+    z-index: 1002;
+}
+
+@keyframes Gradual{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes Gradual{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.asideTitle{
+    color: white;
+    background-color: rgb(0,188,212);
+    width: 210px;
+    height: 50px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle
+}
+
+.asideListTitle {
+    width: 100%;
+    font-weight: bold;
+    height: var(--head-height);
+    /*margin: 20px auto 0px auto;*/
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 1px 5px #d8d8d8;
+}
+
+.asideListTitleIcon {
+    width: 50px;
+    height: 50px;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.PublicIcon{
+    background-image: url("../../src/img/public.png");
+}
+
+.UserIcon{
+    background-image: url("../../src/img/user.png");
+}
+
+.SettingIcon{
+    background-image: url("../../src/img/setting.png");
+}
+
+.asideListTitleWord {
+    flex: auto;
+}
+
+.asideListContent {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.asideListContent[data-expand="false"] {
+    max-height: 0px;
+    transition: max-height 1s;
+}
+
+.asideListContent[data-expand="true"] {
+    max-height: 350px;
+    transition: max-height 1s;
+}
+
+.asideListItem {
+    width: 100%;
+    height: var(--head-height);
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.asideListItem:hover
+{
+    color: white;
+    background-color: var(--shallow-theme-color);
+    transition: background-color 0.4s;
+}
+.logo{
+    width: 180px;
+    height: 120px;
+    margin: 0px 10px;
+}
+.StatusIcon {
+    width: 20px;
+    height: 20px;
+    margin: 0px 10px;
+}
+
+.StatusIcon[data-expand="false"] {
+    transform: rotate(0deg);
+    transition: transform 0.5s;
+}
+
+.StatusIcon[data-expand="true"] {
+    transform: rotate(90deg);
+    transition: transform 0.5s;
+}
+
+.blurground {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 300%;
+    z-index: 1001;
+}
+
+/*汉堡按钮*/
+
+.hamburger:focus {
+    outline: none;
+}
+.hamburger {
+    display: block;
+    position: relative;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    width: 36px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(0,188,212);
+}
+
+
+.hamburger:focus {
+    outline: none;
+}
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    top: 22px;
+    left: 8px;
+    right: 8px;
+    background-color: #fff;
+}
+.hamburger span:before,
+.hamburger span:after {/*before和after与span重合，需要进行上移和下移*/
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+}
+.hamburger span:before {
+    top: -10px;/*相对于中间的span上移10px*/
+}
+.hamburger span:after {
+    bottom: -10px;/*相对于中间的span下移10px*/
+}
+
+.MenuButton{
+    position:relative;
+    left: 0px;
+    font-size: 0;
+    width: 48px ;
+    height: 48px;
+}
+
+.text{
+    position:absolute;
+    left: 0px;
+    width:100%;
+    height: 100%;
+    z-index: 1001;
+}
+
+.head{
+    position:absolute;
+    left: 0px;
+    font-size: 0;
+    width: 100%;
+    height: 48px;
+    background-color: rgb(0,188,212);
+    font-color: white;
+    z-index: 1001;
+}
+
+#LogoutButton {
+    position: relative;
+    right: -90%;
+    width: 80px;
+    top: -75%;
+    font-size: 17px;
+}
+
+.TextTitle{
+    position:relative;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.content{
+    position:relative;
+    left: 15px;
+    top: 0px;
+    width: 95%;
+    height: auto;
+}
+
+.divideLine{
+    position:relative;
+    top: -75%;
+    background-color: darkgray;
+    width: 100%;
+    height: 2px;
+    margin-top: 8px;
+}
+
+.contentTitle{
+    position: relative;
+    top: 120px;
+    width: 90%;
+    font-weight: bold;
+    padding: 5px;
+    height: var(--head-height);
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    margin-left: 25px;
+    margin-right: 15px;
+    background-color: lightslategray;
+    border-radius: 10px;
+    border-style: none;
+    margin: 20px auto 0px auto;
+}
+
+.contentTitleWord{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align:center;
+}
+
+.contentDetail {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.contentDetail[data-expand="false"] {
+    max-height: 0px;
+    transition: max-height 1s;
+}
+
+.contentDetail[data-expand="true"] {
+    max-height: 340px;
+    transition: max-height 1s;
+}
+
+.contentDetailItem {
+    position: relative;
+    top: 120px;
+    left: 0px;
+    width: 100%;
+    height: var(--head-height);
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.contentDetailItem:hover {
+    color: white;
+    background-color: var(--shallow-theme-color);
+    transition: background-color 0.4s;
+}
+
+.mainContent{
+    position:absolute;
+    left: 0px;
+    top: 48px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.usercase{
+    position:absolute;
+    left: 0px;
+    top: 48px;
+    width: 100%;
+    height: 100%;
+}
+
+.contentDetails{
+     position: fixed;
+     top: 15%;
+     left: 35%;
+     height:75%;
+     width: 30%;
+     background-color: #f8f9fa;
+     z-index: 1005;
+     animation: Gradual 1s;
+     -webkit-animation: Gradual 1s;
+}
+
+.TitleTab{
+    position: relative;
+    left: 25px;
+    top: 30px;
+    width: 80%;
+    height: 40px;
+    border-radius: 2px;
+    border-bottom: 1.2px solid #eaeaea;
+}
+
+.DetailTitle{
+    float:left;
+/*    display: inline;*/
+    margin-bottom: -1px;
+    font-size: 15px;
+    font-family: "Calibri Light";
+    color: #6a6e6b;
+    background-color: #f8f9fa;
+
+    padding-left: 12px;
+    padding-top: 15px;
+    padding: 10px;
+}
+
+.title1{
+    border-top: 1.2px solid #eaeaea;
+    border-left: 1.2px solid #eaeaea;
+    border-bottom: 1.2px solid #f8f9fa;
+    border-right: 1.2px solid #f8f9fa;
+    border-radius: 2px;
+}
+
+.style1{
+    border-top: 1.2px solid #f8f9fa;
+    border-left: 1.2px solid #f8f9fa;
+    border-bottom: 1.2px solid #eaeaea;
+    border-right: 1.2px solid #eaeaea;
+    border-radius: 2px;
+}
+
+.title2{
+     border-bottom: 1.2px solid #eaeaea;
+     border-left: 1.2px solid #eaeaea;
+     border-radius: 2px;
+}
+
+.style2{
+    border-top: 1.2px solid #eaeaea;
+    border-left: 1.2px solid #f8f9fa;
+    border-right: 1.2px solid #eaeaea;
+    border-radius: 2px;
+}
+
+.DetailsContent{
+    height:60%;
+    width: 50%;
+    position: relative;
+    left: -50px;
+    top: 35px;
+    animation: Gradual 1s;
+    -webkit-animation: Gradual 1s;
+}
+
+.DetailContentTitle{
+    position: relative;
+    width: auto;
+    left: 30%;
+    top: 5%;
+    text-align: center;
+}
+
+.DetailContentWords{
+    position: relative;
+    width: 100%;
+    left: 15%;
+    top: 11%;
+    line-height:38pt;
+    font-family: Microsoft YaHei;
+    padding: 10px;
+    padding-right: 80px;
+    border: 1.2px solid #eaeaea;
+    border-radius: 2px;
+}
+
+.DetailContentWays{
+    position: relative;
+    width: 100%;
+    left: 15%;
+    top: 20%;
+    line-height:38pt;
+    font-family: Microsoft YaHei;
+    padding: 10px;
+    padding-right: 80px;
+    border: 1.2px solid #eaeaea;
+    border-radius: 2px;
+}
+
+.SendContent{
+    height:100%;
+    width: 50%;
+    position: relative;
+    left: -20px;
+    top: 25px;
+    animation: Gradual 1s;
+    -webkit-animation: Gradual 1s;
+}
+
+.SendContentTitle{
+    position: relative;
+    width: auto;
+    left: 17%;
+    top: 5%;
+    text-align: center;
+}
+
+.SendContentWords{
+    position: relative;
+    width: 100%;
+    left: 2%;
+    top: 10%;
+    line-height:38pt;
+    font-family: Microsoft YaHei;
+}
+
+#Destinationaddr{
+    position: relative;
+    width: 150%;
+    left: 0px;
+    top: 45px;
+    font-family: Microsoft YaHei;
+    margin-top: 30px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    text-indent:4px;
+}
+
+.sendButton{
+    position: relative;
+    width: 150%;
+    left: 0px;
+    top: 70px;
+    margin-top: 30px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: darkcyan;
+    color: white;
+}

@@ -1,0 +1,15 @@
+
+
+.content {
+	position:relative;
+	padding-top: 10px;
+}
+
+.content .topic{
+	color: #1b7db8;
+	margin-bottom: 0;
+}
+
+.content li{
+	margin: 10px 0 10px 0;
+}
