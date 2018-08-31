@@ -1,6 +1,5 @@
-{
-    "date":{
-        "date_list":[
+
+[
             {
                 "title":"test title",
                 "reward":"12/h",
@@ -387,6 +386,4 @@
                 "place":"work place 2",
                 "education":"education234"
             }
-        ]
-    }
-}
+]

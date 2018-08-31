@@ -165,9 +165,13 @@ div.slider-nav span {
 div.slider-nav span.right {
     background: url(../../images/right-arrow.png) no-repeat ;
     background-size: 40px 55px; 
-    right: 0; }
+    right: 0;
+    z-index: -1;
+ }
 
 div.slider-nav span.left {
     background: url(../../images/left-arrow.png) no-repeat;
     background-size: 40px 55px;
-    left: 0; }
+    left: 0; 
+    z-index: -1;
+}

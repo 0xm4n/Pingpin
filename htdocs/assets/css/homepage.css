@@ -20,20 +20,16 @@ a{
 
 
 #container {
-	position: absolute;
-	top: 65%;
-    left: 50%;
-    margin-left: -260px;
-    margin-top: -300px;
-    
+    width: 800px;
+    margin-left: 35%;
+    margin-top: 300px;
+    text-align: center;
 	
 }
 
 #box{
-    position: absolute;
-    top:95%;
-    left:24%;
-    margin-top:-50px;
+    margin-top:25px;
+    margin-left: 33%;
 }
 
 .parent {

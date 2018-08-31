@@ -1,12 +1,3 @@
-<?php
-  session_start();
-
-  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
-    echo "<script>alert('请先登陆！');</script>";
-    header("Refresh:0;url=index.html");
-    exit();
-  }
-?>
 <!doctype html>
 <html>
 
@@ -69,11 +60,6 @@
                 <span class="sub_content2">教授罗凡小朋友数学</span>
             </div>
             <div class="row">
-                <span class="sub_title2">【工作要求】</span>
-                <br>
-                <span class="sub_content2">男男男</span>
-            </div>
-            <div class="row">
                 <span class="sub_title2">【工作时间】</span>
                 <br>
                 <span class="sub_content2">17:00--19:00每周五</span>
@@ -88,11 +74,26 @@
                 <br>
                 <span class="sub_content2">120元/天</span>
             </div>
-            <div class="row">
-                <span class="sub_title2">【报名人数】</span>
-                <br>
-                <span class="sub_content2">12人</span>
+            <div class="content_header">
+                <span id="sub_title">联系方式</span>
+                <hr>
             </div>
+            <div class="row">
+                <span class="sub_title2">【联系人】</span>
+                <br>
+                <span class="sub_content2">唐老板</span>
+            </div>
+            <div class="row">
+                <span class="sub_title2">【咨询电话】</span>
+                <br>
+                <span class="sub_content2">123456789</span>
+            </div>
+            <div class="row">
+                <span class="sub_title2">【简历投递邮箱】</span>
+                <br>
+                <span class="sub_content2">1234567@qq.com</span>
+            </div>
+        </div>
     </div>
 
 </body>

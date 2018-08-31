@@ -23,6 +23,7 @@ form {
     border-radius: 3px;
     /* 保证fixed下header不会留下空隙 */
     top: 0;
+    z-index: 999;
 }
 /* 固定顶部栏 */
 .width_limit{

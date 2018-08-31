@@ -65,9 +65,9 @@ div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.g
       <div class="dropdown">
         <a href="apply.php" class="dropbtn">申请兼职</a>
         <div class="dropdown-content">
-          <a href="#">校内兼职</a>
-          <a href="#">企业兼职</a>
-          <a href="#">实验室兼职</a>
+          <a href="apply.php">校内兼职</a>
+          <a href="apply.php">企业兼职</a>
+          <a href="apply.php">实验室兼职</a>
         </div>
       </div>
       <li><a href="hiring.php">发布兼职</a></li>

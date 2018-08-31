@@ -7,7 +7,7 @@
         if(mb_strlen($str,'utf8')>$len){
             $show=$name."长度不能超过".$len."!";
             echo "<script>alert('$show');</script>";
-            header("Refresh:0;url=../hiring.html");
+            header("Refresh:0;url=../hiring.php");
             exit();
         }
     }
