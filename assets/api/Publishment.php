@@ -2,7 +2,7 @@
 
 include_once("mysql.php");
 
-    function addPublishment($username,$id,$time){
+    function addPublishment($id,$time){
         date_default_timezone_set('PRC'); // 中国时区
 
         $publishtime = date("Y-m-d H:i:s");
@@ -10,6 +10,9 @@ include_once("mysql.php");
         
         $pt = strtotime($publishtime);
         $et = strtotime($endtime);
+	
+	session_start();
+	$username=$_SESSION['username'];
 
         //插入信息
         $insertSQL1 = "INSERT INTO publishment VALUES('$username', '$id', '$pt', '$et')";

@@ -86,9 +86,7 @@ select{
 }
 
 button{
-    position: absolute;
-    padding: 10px 24px;
-    left: 35%;
+    padding: 12px 35px;
     margin-bottom: 30px;
     margin-top: 10px;
     color: white;
@@ -102,4 +100,11 @@ button{
 a{
     color:#cccccc;
     text-decoration: none;
+}
+.btnnn{
+    margin-top:20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
 }

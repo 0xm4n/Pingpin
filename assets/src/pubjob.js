@@ -1,3 +1,4 @@
+
 //分页函数
 function Page(opt){}
 
@@ -26,43 +27,25 @@ function page_func(date){
     });
 }
 
-if($("#content").length>0){
-    $.getJSON("./PHP/myPTjobjson.php",function(e){
-        if(e.length==0){
-            alert("暂无数据4");
-            return;
-        }
-        page_func(e);
-    })
-}
-
-if($("#pubcontent").length>0){
-    $.getJSON("./PHP/pubPTjobjson.php",function(e){
-        if(e.length==0){
-            alert("暂无数据4");
-            return;
-        }
-        page_func(e);
-    })
-}
+$.getJSON("./PHP/pubPTjobjson.php",function(e){
+    if(e.length==0){
+        alert("暂无数据4");
+        return;
+    }
+    page_func(e);
+})
 
 //展示兼职信息
 function dateinfo(obj){
-    // 根据对应div元素是否存在进行选择
     var detail = '<div class="color_sub_header">'+obj.title+'</div>'+
                 '<div class="sub_content">'+
                     '<span id="pt_type">'+obj.type+'</span>'+
                         '<span id="pt_time">'+obj.time+'</span>'+
                         '<span id="pt_salary">'+obj.reward+'</span>'+
                         '<span id="pt_location">'+obj.place+'</span>'+
-                        '<a id="pt_more" href="./apply_detail.php'+'?id='+obj.id+'">查看详情</a>'
-                +'</div>';
-    if($("#content").length>0){
-        $("#content").append(detail);
-    }
-    if($("#pubcontent").length>0){
-        $("#pubcontent").append(detail);
-    }
+                        '<a id="pt_more" href="./apply_detail.php'+'?id='+obj.id+'">查看详情</a>'+
+                '</div>';
+    $("#pubcontent").append(detail);
 }
 
 //控制当前页数对应的兼职信息

@@ -192,10 +192,11 @@
             </div>
         </div>
         <!--提交按钮-->
+	<div class="btnnn ">
         <button id="publish">点击发布</button>
+	</div>
     </form>
-
-
+<br><br>
 </body>
 
 <script type="text/javascript" src="./assets/src/nav.js"></script>

@@ -144,7 +144,7 @@ div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.g
 					岗位名称：高层次人才<br>
 					邮箱：zzbgbk@szns.gov.cn <br>
 					</p>
-					<p class="see_more">[查看详情]
+					<p class="see_more"><a href="https://mp.weixin.qq.com/s/SIJ3grIpk7jYzEhQLNiWwQ" target="_blank">[查看详情]</a>
 					</p>
 					</div>
 			</div>
@@ -154,7 +154,7 @@ div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.g
 					<h2 class="tit">航天科技集团2019校园招聘</h2>
 					<p class="pa">航天，是一个国家综合实力和战略威慑力的重要体现。中国航天事业创建60多年来，在党中央、国务院、中央军委的英明领导和亲切关怀下，几代航天人接续奋斗，走出了一条自力更生、自主创新的发展道路，创造了以“两弹一星”、载人航天和月球探测为代表的辉煌成就
 					</p>
-					<p class="see_more">[查看详情]
+					<p class="see_more"><a href="https://mp.weixin.qq.com/s/SIJ3grIpk7jYzEhQLNiWwQ" target="_blank">[查看详情]</a>
 					</p>
 					</div>
 

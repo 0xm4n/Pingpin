@@ -5,6 +5,8 @@
     header("Refresh:0;url=index.html");
     exit();
   }
+
+  if( $_SESSION['role']==1)
 ?>
 <!doctype html>
 <html>
@@ -55,7 +57,7 @@
     </div>
 </div>
 
-<div id="content">
+<?php if($_SESSION['role']==1) echo "<div id=\"pubcontent\">"; else echo "<div id=\"content\">";?>
     <div class="sub_header_title"><h1 id="topic">我的兼职</h1></div>
     <hr>
     <div class="sub_header">

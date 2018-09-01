@@ -3,8 +3,11 @@ header('content-type:application/json;charset=utf8');
 include_once("mysql.php");
 
 getConnect();
+session_start();
+$username = $_SESSION['username'];
+
 $results = array();
-$select = "SELECT *  FROM information order by id  desc";
+$select = "SELECT * FROM information natural join publishment WHERE username = '$username'";
 
 $result_query=mysql_query($select);
 

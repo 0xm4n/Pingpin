@@ -27,6 +27,14 @@ body{
 	border-radius: 2px;
 	margin-top: 20px;
 }
+
+#pubcontent{
+width:800px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+
+}
 #pt_job_header{
 	width: 30px;
 	padding-top: 20px;
@@ -118,7 +126,7 @@ body{
 	border-radius: 0px 3px 3px 3px;
 	text-align: left;
 	padding-top: 30px;
-	background-color: #eeeeee44;
+	background-color: white;
 }
 
 #pt_type{
@@ -179,4 +187,6 @@ body{
 	word-wrap : break-word;
 	overflow: hidden;
 	font-size: 13px;
+	text-decoration: none;
+	color: black;
 }

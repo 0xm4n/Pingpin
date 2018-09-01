@@ -20,19 +20,18 @@ include_once("Publishment.php");
         $res2 = mysql_query($insertSQL2);
 
         $time = 1000;
-	$username="testuser";
 
-        $res3 = addPublishment($username,$id,$time);
+        $res3 = addPublishment($id,$time);
 
         //检测信息
-        if($res1&&$res2&&$res3){
+        if($res1&&$res2&&res3){
             mysql_query("COMMIT");
         }
         else{
             mysql_query("ROLLBACK");  
             closeConnect();     
             echo "<script>alert('兼职信息错误！');</script>";
-            header("Refresh:10;url=../hiring.html");
+            header("Refresh:0;url=../../hiring.php");
             exit();
         }
 
@@ -45,11 +44,11 @@ include_once("Publishment.php");
 
         if (mysql_num_rows($selectResult1) > 0 && mysql_num_rows($selectResult2) > 0) {
             echo "<script>alert('兼职发布成功');</script>";
-            header("Refresh:0;url=../home.html");
+            header("Refresh:0;url=../../home.php");
         }
         else {
             echo "<script>alert('兼职发布失败');</script>";
-            header("Refresh:0;url=../hiring.html");
+            header("Refresh:0;url=../../hiring.php");
         }
 
         closeConnect();
