@@ -7,7 +7,7 @@
         if(mb_strlen($str,'utf8')>$len){
             $show=$name."长度不能超过".$len."!";
             echo "<script>alert('$show');</script>";
-            header("Refresh:0;url=../hiring.html");
+            header("Refresh:0;url=../hiring.php");
             exit();
         }
     }
@@ -15,7 +15,7 @@
 
     if (empty($_POST)) {	
         echo "<script>alert('您提交的表单数据超过post_max_size!');</script>";
-        header("Refresh:0;url=../hiring.html");
+        header("Refresh:0;url=../hiring.php");
 	    exit();
     }
 
@@ -73,7 +73,7 @@
     if($contacts == null || $phone == null || $title == null || $type == null || $education == null
     || $sex == null || $content == null || $time == null || $place == null || $reward == null){
         echo "<script>alert('请输入相关信息！');</script>";
-	    header("Refresh:0;url=../hiring.html");
+	    header("Refresh:0;url=../hiring.php");
 	    exit();
     }
 

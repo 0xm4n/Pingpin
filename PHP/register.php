@@ -7,7 +7,7 @@
         if(mb_strlen($str,'utf8')>$len){
             $show=$name."长度不能超过".$len."!";
             echo "<script>alert('$show');</script>";
-            header("Refresh:0;url=../hiring.html");
+            header("Refresh:0;url=../hiring.php");
             exit();
         }
     }
@@ -17,7 +17,7 @@
     $len3=18;
 
     if (empty($_POST)) {	
-        echo "<script type='text/javascript' src='../js/popwindow.js'>pupopTip('200px','120px','数据超过post_max_size!','../images/error.png','25px');</script>";
+        echo "<script>alert('您提交的表单数据超过post_max_size!');</script>";
         header("Refresh:0;url=../register.html");
         exit();
     }
@@ -26,7 +26,7 @@
     checklen($username,"用户名",$len1);
 
     if ($username == null){
-        echo "<script type='text/javascript' src='../js/popwindow.js'>pupopTip('200px','120px','请输入用户名！','../images/error.png','25px');</script>";
+        echo "<script>alert('请输入用户名！');</script>";
         header("Refresh:0;url=../register.html");
         exit();
     }
@@ -38,13 +38,13 @@
     checklen($verify,"确认密码",$len2);
 
     if ($password == null||$verify == null){
-        echo "<script type='text/javascript' src='../js/popwindow.js'>pupopTip('200px','120px','请输入密码!','../images/error.png','25px');</script>";
+        echo "<script>alert('请输入密码！');</script>";
         header("Refresh:0;url=../register.html");
         exit();
     }
 
     if ($password != $verify) {
-        echo "<script type='text/javascript' src='../js/popwindow.js'>pupopTip('200px','120px','输入的密码与确认密码不相等！','../images/error.png','25px');</script>";
+        echo "<script>alert('输入的密码与确认密码不相等！');</script>";
         header("Refresh:0;url=../register.html");
         exit();
     }
@@ -66,7 +66,7 @@
     getConnect();
     $resultSet = mysql_query($userNameSQL);
     if (mysql_num_rows($resultSet) > 0) {
-        echo "<script type='text/javascript' src='../js/popwindow.js'>pupopTip('200px','120px','用户名已被占用<br>请更换其他用户名','../images/error.png','25px');</script>";
+        echo "<script>alert('用户名已被占用，请更换其他用户名');</script>";
         header("Refresh:0;url=../register.html");
         exit();
 	

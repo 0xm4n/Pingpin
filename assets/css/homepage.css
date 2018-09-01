@@ -5,99 +5,14 @@ select,
 textarea {
     font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
 }
-
+body{
+    background-color: #f6f6f6;
+}
 form {
     margin: 0px;
     display: inline;
 }
 
-/*定义头部高度背景颜色*/
-
-#header {
-    height: 83px;
-    color: white;
-    background-color: #464C5B;
-    border-radius: 3px;
-}
-
-/*以下为头部从左到右每一个元素的样式*/
-#logo_img {
-    width: 150px;
-    height: 65;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-}
-
-#seperator {
-    font-size: 38px;
-    position: absolute;
-    margin-top: 15px;
-    color: #999999;
-}
-
-#search_input {
-    position: absolute;
-    width: 190px;
-    margin-left: 30px;
-    margin-top: 27px;
-    margin-bottom: 20px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 8px;
-    border-radius: 4px;
-}
-
-.header_tab {
-    margin: 0px 20px;
-    color: #cccccc;
-    font-size: 17px;
-}
-
-#f1 {
-    position: absolute;
-    margin-left: 250px;
-    margin-right: 0px;
-    padding: 30px 20px;
-    background-color: rgba(51, 51, 51, 0.59);
-    color: #9BDDD1;
-   
-}
-
-#f2 {
-	height: 22.4px;
-    position: absolute;
-    margin-left: 324.2px;
-    margin-right: 0px;
-    padding: 30px 20px;
-}
-
-#f3 {
-    position: absolute;
-    margin-left: 432.2px;
-    margin-right: 0px;
-    padding: 30px 20px;
-}
-
-#f4 {
-    position: absolute;
-    margin-left: 540.2px;
-    margin-right: 0px;
-    padding: 30px 20px;
-}
-
-#logout {
-    position: absolute;
-    margin-left: 648.2px;
-    margin-right: 0px;
-    padding: 30px 20px;
-}
-
-#logout_icon {
-    position: absolute;
-    margin-top: 27px;
-    margin-left: 740px;
-}
 
 
 a{
@@ -107,41 +22,81 @@ a{
 
 
 #container {
-	position: absolute;
-	top: 65%;
-    left: 50%;
-    margin-left: -260px;
-    margin-top: -300px;
-    
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 110px;
 	
 }
 
 #box{
-    position: absolute;
-    top:95%;
-    left:24%;
-    margin-top:-50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .parent {
     width: 700px;
     height: 500px;
-   
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     display: flex;
     flex-flow: row wrap;
     align-content: space-around;
     justify-content: space-between;
-    
-
   }
 
   .child {
     width:200px;
-    border: 3px solid rgb(216, 216, 216);
+    height: 280px;
+    border: 2px solid rgb(216, 216, 216);
     padding:5px;
     overflow-wrap: break-word;
     margin:5px;    
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  .child:hover{
+    background-color: rgba(226,226,226,0.473);
   }
   
-  
+  h3.sub_tit 
+  {
+      text-align: left;
+      margin: 4px 8px;
+      font-size: 16px;
+      font-weight: 300;
+      margin-top: 10px;
 
+  }  
+  
+  h2.tit{
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 6px;
+      margin-bottom: 5px;
+      text-align: left;
+  }
+  
+  p.pa{
+      text-align: left;
+      font-size:13px;
+      margin-left: 5px;
+      margin-right: 3px;
+      margin-top:4px;
+  }
+  
+  p.see_more{
+      text-align: right;
+      font-size:13px;
+      margin-left: 5px;
+      margin-right: 8px;
+      margin-top:4px;
+  }
+  

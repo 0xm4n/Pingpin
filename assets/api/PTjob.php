@@ -20,8 +20,7 @@ include_once("Publishment.php");
         $res2 = mysql_query($insertSQL2);
 
         $time = 1000;
-
-        $username="testuser";
+	$username="testuser";
 
         $res3 = addPublishment($username,$id,$time);
 
@@ -31,7 +30,7 @@ include_once("Publishment.php");
         }
         else{
             mysql_query("ROLLBACK");  
-            closeConnect();      
+            closeConnect();     
             echo "<script>alert('兼职信息错误！');</script>";
             header("Refresh:10;url=../hiring.html");
             exit();

@@ -16,7 +16,7 @@ include_once("mysql.php");
         $res1 = mysql_query($insertSQL1);
 
         //检测信息
-        if($res1){
+        if($res1){	
             return 1;
         }
         else{

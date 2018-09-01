@@ -5,161 +5,28 @@ select,
 textarea {
     font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
 }
-
+body{
+    background-color: #f6f6f6;
+}
 form {
     margin: 0px;
     display: inline;
 }
 
-/*定义头部高度背景颜色*/
 
-#header {
-    position: fixed;
-    right:0;
-    left: 0;
-    height: 83px;
-    color: white;
-    background-color: #464C5B;
-    border-radius: 3px;
-    /* 保证fixed下header不会留下空隙 */
-    top: 0;
-}
-/* 固定顶部栏 */
-.width_limit{
-    min-width: 768px;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-/*以下为头部从左到右每一个元素的样式*/
-.logo
-{
-    float: left;
-    height: 83px;
-    padding: 0;
-}
-
-#logo_img {
-    width: 150px;
-    height: 100%;
-}
-
-#seperator {
-    font-size: 38px;
-    position: absolute;
-    top: 13px;
-    left: 383px;
-    color: #999999;
-}
-
-#header form{
-    position: relative;
-    top: -49px;
-}
-
-#header .search{
-    float: left;
-    position: relative;
-    top: 45px;
-}
-#search_input {
-    width: 190px;
-    margin-left: 30px;
-    margin-top: 27px;
-    margin-bottom: 20px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 8px;
-    border-radius: 4px;
-    /* 取消输入框聚焦效果 */
-    outline: none;
-}
-/* 搜索图标的样式 */
-#search_btn{
-    position: absolute;
-    top:0px;
-    right: 5px;
-}
-
-.header_tab {
-    margin: 0px 20px;
-    color: #cccccc;
-    font-size: 17px;
-}
-
-/* 修改后的导航栏css */
-#header ul{
-    list-style-type: none;
-    margin-left: 43px;
-    margin-top: 0px;
-    padding: 0;
-    overflow: hidden;
-    display: inline-block;
-}
-
-#header li{
-    float: left;
-}
-
-#header li a, .dropbtn{
-    display: inline-block;
-    color: #cccccc;
-    text-align: center;
-    padding: 31px 16px;
-    text-decoration: none;
-}
-
-#header li a:hover, .dropbown:hover, .dropbtn{
-    background-color:  rgba(51, 51, 51, 0.59);
-}
-
-.dropdown
-  {
-    float: left;
-  }
-  
-  .dropdown-content
-  {
-    display:none;
-    position:absolute;
-    background-color:#f9f9f9;
-    min-width:160px;
-    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
-  }
-  
-  .dropdown-content a
-  {
-    color:black;
-    padding:12px 16px;
-    text-decoration:none;
-    display:block;
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  .dropdown:hover .dropdown-content
-  {
-    display:block;
-  }
-
-  .logoutdiv
-  {
-      float: right;
-      position: relative;
-      top: 30px;    
-    }
-
-  .logout{
-      text-decoration: none;
-  }
 /*主体逻辑分区宽度和居中设置*/
 #content
 {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 300px;
+    margin-top: 120px;
     text-align: center;
+}
+
+#content a{
+    color:#cccccc;
+    text-decoration: none;
 }
 /*主体头部标题和水平分割线*/
 .content_header{
@@ -179,7 +46,7 @@ hr{
     background-color: #cccccc;
 }
 
-.content_body{
+#content_body{
     text-align: start;
     margin-top: 20px;
     margin-left: 10px;
@@ -188,14 +55,15 @@ hr{
 
 .ptJob_Info{
 	width: 700px;
-	background-color: rgba(226, 226, 226, 0.473);
+	background-color: white;
 	margin: 5px;
 	padding: 10px;
 	padding-left: 20px;
 	font-size: 14px;
 	border-radius: 3px;
 	line-height: 22px;
-	margin-top: 15px;
+    margin-top: 15px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
 }
 
 .pt_title
@@ -219,7 +87,8 @@ hr{
 	color: #cccccc;
 	background-color: rgba(70, 76, 91, 0.952);
 	border-color: #385D9B;
-	font-size:13px;
+    font-size:13px;
+    outline: none;
 }
 
 #salary{
@@ -240,11 +109,20 @@ hr{
 	font-size: 13;
 	line-height: 24px;
 }
-
-#content a{
-    color:#cccccc;
+#content_body a{
+    color:white;
     text-decoration: none;
+    padding: 13px 24px;
+    background-color: #464C5B;
+    font-size: 13px;
+    outline: none;
+    margin-left: 60px;
+    transition: all 0.2s ease-out 0s;
 }
+#content_body a:hover{
+    background-color: #385D9B;
+}
+
 
 /* 分页部分样式 */
 
@@ -267,6 +145,7 @@ ul.pagination li a{
     float: left;
     padding: 8px 16px;
     text-decoration: none;
+    transition: all 0.2s ease-out 0s;
 }
 
 ul.pagination li a.active{
@@ -276,4 +155,5 @@ ul.pagination li a.active{
 
 ul.pagination li a:hover:not(.active){
     background-color: #464C5B;
+    color:white;
 }

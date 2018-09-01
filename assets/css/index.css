@@ -8,7 +8,7 @@ body,
 button,
 input,
 select,
-textarea {
+input {
     font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", "\9ED1\4F53", Arial, sans-serif;
 }
 
@@ -41,6 +41,7 @@ textarea {
     margin-bottom: 20px;
     margin-right: 30px;
     float: right;
+    outline: none;
 }
 
 input {
@@ -55,6 +56,23 @@ input {
     background: #fff;
     border-radius: 3px;
     margin-bottom: 12px;
+    outline:none;
+}
+
+input:focus::-webkit-input-placeholder{
+    color: transparent;
+}
+/* Mozilla Firefox 4 to 18 */
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+    /* Mozilla Firefox 19+ */
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+    /* Internet Explorer 10+ */
+input:focus:-ms-input-placeholder {
+    color: transparent;
 }
 
 #register {
