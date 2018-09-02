@@ -4,7 +4,7 @@
     echo "<script>alert('请先登陆！');</script>";
     header("Refresh:0;url=index.html");
     exit();
- }
+  }
 ?>
 
 <!doctype html>

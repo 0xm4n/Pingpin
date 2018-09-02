@@ -1,10 +1,10 @@
 ﻿<?php 
 	session_start();   
-  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
-    echo "<script>alert('请先登陆！');</script>";
-    header("Refresh:0;url=index.html");
-    exit();
-  }
+	if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
+		echo "<script>alert('请先登陆！');</script>";
+		header("Refresh:0;url=index.html");
+		exit();
+	}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -89,7 +89,7 @@ div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.g
 				<h2 class="tit">阿里巴巴2019秋季校园招聘正式启动！</h2>
 					<p class="pa"> 梦想还是要有万一实现了呢？	<br>"让天下没有难做的生意" <br>为了这个梦想，我们一直在努力 <br>“五新”重新定义产业和行业 <br>达摩院和罗汉堂相继成立 <br>未来阿里巴巴将担负起更多责任 <br>继续以解决社会问题为核心 <br>服务全球20亿消费者 <br>来，加入我们一起创造新世界。
 					</p>
-					<p  class="see_more"><a href="https://campus.alibaba.com/index.html" target="_blank">[查看详情]</a>
+					<p  class="see_more"><a href="https://campus.alibaba.com" target="_blank">[查看详情]</a>
 					</p>
 				</div>
 			</div>

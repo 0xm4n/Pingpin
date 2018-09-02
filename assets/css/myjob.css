@@ -72,7 +72,7 @@ width:800px;
     box-shadow: 0 1px 3px rgba(26,26,26,.1);
 }
 
-.sub_container:hover{
+.sub_content:hover{
 	background-color: #dadada7e;
 }
 
@@ -189,4 +189,58 @@ width:800px;
 	font-size: 13px;
 	text-decoration: none;
 	color: black;
+}
+
+#application_more{
+	margin-left: 25px;
+	word-break:normal;
+	display:inline-block;
+	white-space:pre-wrap;
+	word-wrap : break-word;
+	overflow: hidden;
+	font-size: 13px;
+	text-decoration: none;
+	color: black;
+}
+
+#container{
+	width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    text-align: center;
+}
+
+/* 分页部分样式 */
+
+.page{
+    margin-top: 90px;
+}
+
+.page .pagination{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li{
+    display: inline;
+}
+
+ul.pagination li a{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: all 0.2s ease-out 0s;
+}
+
+ul.pagination li a.active{
+    background-color: #464C5B;
+    color: #ffffff;
+}
+
+ul.pagination li a:hover:not(.active){
+    background-color: #464C5B;
+    color:white;
 }

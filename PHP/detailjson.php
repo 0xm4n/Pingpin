@@ -9,16 +9,15 @@ $select = "SELECT * FROM contactinfo natural join information WHERE id=$id";
 
 $result_query=mysql_query($select);
 
-  while ($row = mysql_fetch_assoc($result_query)) {
-    $results[] = $row;
-    }
+while ($row = mysql_fetch_assoc($result_query)) {
+  $results[] = $row;
+}
   
-  if($results){
-      echo json_encode($results);
-  
-  }else{
-      echo mysql_error();
-  }
+if($results){
+  echo json_encode($results);
+}else{
+  echo mysql_error();
+}
 
-  closeConnect();
+closeConnect();
 ?>

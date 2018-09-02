@@ -26,6 +26,7 @@ function page_func(date){
     });
 }
 
+
 if($("#content").length>0){
     $.getJSON("./PHP/myPTjobjson.php",function(e){
         if(e.length==0){
@@ -49,18 +50,28 @@ if($("#pubcontent").length>0){
 //展示兼职信息
 function dateinfo(obj){
     // 根据对应div元素是否存在进行选择
-    var detail = '<div class="color_sub_header">'+obj.title+'</div>'+
-                '<div class="sub_content">'+
-                    '<span id="pt_type">'+obj.type+'</span>'+
-                        '<span id="pt_time">'+obj.time+'</span>'+
-                        '<span id="pt_salary">'+obj.reward+'</span>'+
-                        '<span id="pt_location">'+obj.place+'</span>'+
-                        '<a id="pt_more" href="./apply_detail.php'+'?id='+obj.id+'">查看详情</a>'
-                +'</div>';
     if($("#content").length>0){
+        var detail = '<div class="color_sub_header">'+obj.title+'</div>'+
+                    '<div class="sub_content">'+
+                        '<span id="pt_type">'+obj.type+'</span>'+
+                            '<span id="pt_time">'+obj.time+'</span>'+
+                            '<span id="pt_salary">'+obj.reward+'</span>'+
+                            '<span id="pt_location">'+obj.place+'</span>'+
+                            '<a id="pt_more" href="./apply_detail.php'+'?id='+obj.id+'">查看详情</a>'
+                    +'</div>';
         $("#content").append(detail);
     }
     if($("#pubcontent").length>0){
+        var detail = '<div class="color_sub_header">'+obj.title+'</div>'+
+                    '<div class="sub_content">'+
+                        '<span id="pt_type">'+obj.type+'</span>'+
+                            '<span id="pt_time">'+obj.time+'</span>'+
+                            '<span id="pt_salary">'+obj.reward+'</span>'+
+                            '<span id="pt_location">'+obj.place+'</span>'+
+                            '<a id="pt_more" href="./apply_detail.php'+'?id='+obj.id+'">查看详情</a>'+
+                            // href改成对应php文件
+                            '<a id="application_more" href="./app_more.php'+'?id='+obj.id+'">申请详情</a>'+
+                    '</div>';
         $("#pubcontent").append(detail);
     }
 }
@@ -68,7 +79,12 @@ function dateinfo(obj){
 //控制当前页数对应的兼职信息
 function pagination(num,list){   //num是数字，list是json文件传入的date集合
     // 清空原有兼职数据
-    $(".content_body").html("");    
+    if($("#content").length>0){
+        $("#content").html("");
+    }
+    if($("#pubcontent").length>0){
+        $("#pubcontent").html("");
+    }    
     $.each(list, function(idx,obj){
         if(idx>=((num-1)*page)&&idx<(num*page)){
             dateinfo(obj);
@@ -172,7 +188,10 @@ function Page(opt){
         },
 
         actPages:function (ele){
-            ele.addClass('active').siblings().removeClass('active');
+            // 当页数不超过6页时，进入init()方法时候，通过这个方法显示聚焦效果
+            ele.siblings("li.active").removeClass("active").children().removeClass("active")
+            ele.addClass("active").children().addClass("active");
+            // ele.addClass('active').siblings().removeClass('active');
             return clickPages.elem.children('li.active').text();
         },
         JumpPages:function(){
@@ -287,7 +306,7 @@ function Page(opt){
                 html+='<li page="'+i+'"><a>'+i+'</a></li>';
             }
         }
-        html +='<li><a>下一页</a></li><li><a">&raquo;</a></li>';
+        html +='<li><a>下一页</a></li><li><a>&raquo;</a></li>';
         set.elem.html(html);
         clickPages.init();
     }
@@ -296,12 +315,3 @@ function Page(opt){
     }
 }
 
-// 添加监视scroll的监听器，为导航栏添加一个负的left定位
- document.addEventListener("scroll",setPosition);
- window.addEventListener("resize",setPosition);
- function setPosition(){
-    //  var scroll_left=document.body.scrollLeft;
-    // 在chrome浏览器中不是document.body
-    var scroll_left=document.documentElement.scrollLeft;
-     $("#header").css('left',~scroll_left+1);
- }

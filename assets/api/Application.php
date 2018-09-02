@@ -58,12 +58,12 @@ function deleteApplication($username,$id){
         mysql_query("ROLLBACK");  
         closeConnect();      
         echo "<script>alert('删除兼职错误！');</script>";
-        header("Refresh:10;url=../apply_detail.html");
+        header("Refresh:10;url=../appli_delete.php");
         exit();
     }
 
     echo "<script>alert('删除兼职成功！');</script>";
-    header("Refresh:0;url=../apply_detail.html");
+    header("Refresh:0;url=../appli_delete.php");
     closeConnect();
 }
 

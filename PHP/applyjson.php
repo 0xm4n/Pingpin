@@ -8,16 +8,16 @@ $select = "SELECT *  FROM information order by id  desc";
 
 $result_query=mysql_query($select);
 
-  while ($row = mysql_fetch_assoc($result_query)) {
+while ($row = mysql_fetch_assoc($result_query)) {
     $results[] = $row;
-    }
+}
   
-  if($results){
-      echo json_encode($results);
+if($results){
+  echo json_encode($results);
   
-  }else{
-      echo mysql_error();
-  }
+}else{
+    echo mysql_error();
+}
 
-  closeConnect();
+closeConnect();
 ?>

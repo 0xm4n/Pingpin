@@ -11,16 +11,16 @@ $select = "SELECT * FROM information natural join publishment WHERE username = '
 
 $result_query=mysql_query($select);
 
-  while ($row = mysql_fetch_assoc($result_query)) {
-    $results[] = $row;
-    }
+while ($row = mysql_fetch_assoc($result_query)) {
+  $results[] = $row;
+}
   
-  if($results){
-      echo json_encode($results);
+if($results){
+  echo json_encode($results);
   
-  }else{
-      echo mysql_error();
-  }
+}else{
+    echo mysql_error();
+}
 
   closeConnect();
 ?>

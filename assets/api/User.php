@@ -6,7 +6,7 @@ include_once("mysql.php");
         getConnect();
 
         //插入用户主要信息
-        $registerSQL1 = "INSERT INTO user VALUES('$username', '$password')";
+        $registerSQL1 = "INSERT INTO user VALUES('$username', '$password',0)";
         $res1 = mysql_query($registerSQL1);
 
         //插入用户其它信息
@@ -21,7 +21,7 @@ include_once("mysql.php");
             mysql_query("ROLLBACK");  
             closeConnect();      
             echo "<script>alert('注册信息错误！');</script>";
-            header("Refresh:10;url=../register.html");
+            header("Refresh:0;url=../register.html");
             exit();
         }
 
@@ -116,6 +116,73 @@ include_once("mysql.php");
     
         closeConnect();
     }*/
+	
+    function deleteUser($username){
+        getConnect();
+
+        //删除application表中的user项
+        $deleteSQL3 = "DELETE FROM application WHERE username = '$username'";
+        $res3 = mysql_query($deleteSQL3);
+
+        //删除publishment表中的user项
+        $deleteSQL4 = "DELETE FROM publishment WHERE username = '$username'";
+        $res4 = mysql_query($deleteSQL4);
+
+
+        //删除userinfo表中的user项
+        $deleteSQL1 = "DELETE FROM userinfo WHERE username = '$username'";
+        $res1 = mysql_query($deleteSQL1);
+
+        //删除user表中的user项
+        $deleteSQL2 = "DELETE FROM user WHERE username = '$username'";
+        $res2 = mysql_query($deleteSQL2);
+
+
+
+        //检测信息
+        if($res1&&$res2&&$res3&&res4){
+            mysql_query("COMMIT");
+        }
+        else{
+            mysql_query("ROLLBACK");
+            closeConnect();        
+            echo "<script>alert('删除用户错误！');</script>";
+            header("Refresh:10;url=../console.php");
+            exit();
+        }
+
+        //修改成功
+        echo "<script>alert('删除用户成功！');</script>";
+        header("Refresh:0;url=../console.php");
+        closeConnect();
+    }
+
+function setAdmin($username){
+    getConnect();
+
+    //更新password
+    $updateSQL1 = "UPDATE user set role = 1 WHERE username = '$username' ";
+    $res1 = mysql_query($updateSQL1);
+
+    //检测信息
+    if($res1){
+         mysql_query("COMMIT");
+    }
+    else{
+        mysql_query("ROLLBACK");
+        closeConnect();        
+        echo "<script>alert('设置管理员错误！');</script>";
+        header("Refresh:10;url=../author.php");
+         exit();
+    }
+
+    //修改成功
+    echo "<script>alert('设置管理员成功！');</script>";
+    header("Refresh:0;url=../author.php");
+    closeConnect();
+}
+
+
 
 
 ?>

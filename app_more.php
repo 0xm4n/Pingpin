@@ -1,10 +1,17 @@
 <?php
-  session_start();   
-  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
-    echo "<script>alert('请先登陆！');</script>";
-    header("Refresh:0;url=index.html");
-    exit();
-  }
+    session_start();   
+    if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
+        echo "<script>alert('请先登陆！');</script>";
+        header("Refresh:0;url=index.html");
+        exit();
+    }
+
+    if(!isset($_SESSION['role']) || empty($_SESSION['role'])|| $_SESSION['role']!=1){
+        echo "<script>alert('您没有查看详情！');</script>";
+        header("Refresh:0;url=home.php");
+        exit();
+    }
+
 ?>
 <!doctype html>
 <html>
@@ -12,9 +19,8 @@
 <head>
     <title>兼职详情</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./assets/css/detail.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
-    <link rel="stylesheet" href="./assets/css/myjob.css">
+    <link rel="stylesheet" href="./assets/css/app_more.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
@@ -56,25 +62,16 @@
 </div>
 
 <div id="container">
-    <?php if($_SESSION['role']==1) echo "<div id=\"pubcontent\">"; else echo "<div id=\"content\">";?>
-    <div class="sub_header_title"><h1 id="topic">我的兼职</h1></div>
+    <div class="sub_header_title"><h1 id="topic">申请详情</h1></div>
     <hr>
         <div class="sub_header">
-            <span id="pt_job_header">兼职</span>
-            <span id="pt_job_time">时间</span>
-            <span id="pt_job_location">薪资</span>
-            <span id="pt_job_salary">地点</span>
+            <span id="app_name">用户名</span>
+            <span id="app_phone">联系方式</span>
         </div>
-</div>
-    <!-- 分页 -->
-<div class="page">
-        <ul class="pagination">
-        </ul>
-    </div>
 </div>
 
 </body>
 <script src="./assets/src/jquery.min.js"></script>
-<script type="text/javascript" src="./assets/src/myjob.js"></script>
+<script type="text/javascript" src="./assets/src/app_more.js"></script>
 <script type="text/javascript" src="./assets/src/nav.js"></script>
 </html>

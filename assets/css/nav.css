@@ -132,7 +132,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .header_tab {
-    margin: 0px 20px;
+    margin: 0px 0px;
     color: #cccccc;
     font-size: 17px;
 }

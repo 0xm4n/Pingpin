@@ -93,29 +93,34 @@ include_once("Publishment.php");
         $deleteSQL1 = "DELETE FROM publishment WHERE id = '$id'";
         $res1 = mysql_query($deleteSQL1);
 
+        //删除application表中的id项
+        $deleteSQL2 = "DELETE FROM application WHERE id = '$id'";
+        $res2 = mysql_query($deleteSQL2);
+
+
         //删除information表中的id项
-        $deleteSQL2 = "DELETE FROM information WHERE id = '$id'";
-        $res2 = mysql_query($deleteSQL1);
+        $deleteSQL3 = "DELETE FROM information WHERE id = '$id'";
+        $res3 = mysql_query($deleteSQL3);
 
         //删除contactinfo表中的id项
-        $deleteSQL3 = "DELETE FROM contactinfo WHERE id = '$id'";
-        $res3 = mysql_query($deleteSQL1);
+        $deleteSQL4 = "DELETE FROM contactinfo WHERE id = '$id'";
+        $res4 = mysql_query($deleteSQL4);
 
         //检测信息
-        if($res1&&$res2&&$res3){
+        if($res1&&$res2&&$res3&&res4){
             mysql_query("COMMIT");
         }
         else{
             mysql_query("ROLLBACK");
             closeConnect();        
             echo "<script>alert('删除兼职信息错误！');</script>";
-            header("Refresh:10;url=../home.html");
+            header("Refresh:10;url=../annon_delete.php");
             exit();
         }
 
         //修改成功
-        echo "<script>alert('删除成功！');</script>";
-        header("Refresh:0;url=../home.html");
+        echo "<script>alert('删除兼职信息成功！');</script>";
+        header("Refresh:0;url=../annon_delete.php");
         closeConnect();
     }
 
