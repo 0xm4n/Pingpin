@@ -1,12 +1,13 @@
 <?php
     include_once("mysql.php");
     include_once("easySecure.php");
+    include_once("../assets/api/PTjob.php");
 
     function checklen($str,$name,$len){
         if(mb_strlen($str,'utf8')>$len){
             $show=$name."长度不能超过".$len."!";
             echo "<script>alert('$show');</script>";
-            header("Refresh:0;url=../hiring.html");
+            header("Refresh:0;url=../hiring.php");
             exit();
         }
     }
@@ -14,7 +15,7 @@
 
     if (empty($_POST)) {	
         echo "<script>alert('您提交的表单数据超过post_max_size!');</script>";
-        header("Refresh:0;url=../hiring.html");
+        header("Refresh:0;url=../hiring.php");
 	    exit();
     }
 
@@ -72,51 +73,9 @@
     if($contacts == null || $phone == null || $title == null || $type == null || $education == null
     || $sex == null || $content == null || $time == null || $place == null || $reward == null){
         echo "<script>alert('请输入相关信息！');</script>";
-	    header("Refresh:0;url=../hiring.html");
+	    header("Refresh:0;url=../hiring.php");
 	    exit();
     }
 
-    getConnect();
-
-    $insertSQL1="INSERT INTO contactinfo VALUES (null,'$contacts','$phone','$email','$otherway')";
-    mysql_query($insertSQL1);
-
-   
-    $err1 = mysql_error();
-    if($err1){
-        echo "<script>alert('联系信息提交错误！');</script>";
-        header("Refresh:0;url=../hiring.html");
-	    exit();
-    }
-    $id = mysql_insert_id();
-
-    $insertSQL2 = "INSERT INTO information VALUES ('$id','$title','$type','$education','$sex','$other','$content','$time','$place','$reward','$remarks')";
-    mysql_query($insertSQL2);
-
-    $err2 = mysql_error();
-    if($err2){
-        $deleteSQL = "DELETE FROM contactinfo WHERE id = '$id'";
-        mysql_query($deleteSQL);
-
-        echo "<script>alert('兼职信息提交错误！');</script>";
-        header("Refresh:0;url=../hiring.html");
-	    exit();
-    }
-
-    $selectSQL1 = "SELECT * FROM contactinfo WHERE id = '$id'";
-    $selectResult1 = mysql_query($selectSQL1);
-
-    $selectSQL2 = "SELECT * FROM information WHERE id = '$id'";
-    $selectResult2 = mysql_query($selectSQL2);
-
-    if (mysql_num_rows($selectResult1) > 0 && mysql_num_rows($selectResult2) > 0) {
-        echo "<script>alert('兼职发布成功');</script>";
-        header("Refresh:0;url=../home.html");
-    }
-    else {
-        echo "<script>alert('兼职发布失败');</script>";
-        header("Refresh:0;url=../hiring.html");
-    }
-
-    closeConnect();
+    addPTjob($username,$contacts,$phone,$email,$otherway,$title,$type,$education,$sex,$other,$content,$time,$place,$reward,$remarks);
 ?>

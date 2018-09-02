@@ -14,6 +14,7 @@ textarea {
 
 a{
     color: white;
+    text-decoration: none;
 }
 
 #header {
@@ -93,6 +94,22 @@ input {
     background: #fff;
     border-radius: 3px;
     margin-top: 25px;
+    outline: none;
+}
+input:focus::-webkit-input-placeholder{
+    color: transparent;
+}
+/* Mozilla Firefox 4 to 18 */
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+    /* Mozilla Firefox 19+ */
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+    /* Internet Explorer 10+ */
+input:focus:-ms-input-placeholder {
+    color: transparent;
 }
 
 #contact {
@@ -156,4 +173,5 @@ input {
     border-width: 1.5px;
     margin-bottom: 20px;
     margin-top: 33px;
+    outline: none;
 }

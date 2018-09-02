@@ -1,143 +1,80 @@
 <?php
-  session_start();
-
+  session_start();   
   if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
     echo "<script>alert('请先登陆！');</script>";
     header("Refresh:0;url=index.html");
     exit();
   }
 ?>
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-  <link href="assets/css/myjob.css" rel="stylesheet" type="text/css">
-  <meta charset="utf-8">
-  <title>我的兼职</title>
+    <title>兼职详情</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./assets/css/detail.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/myjob.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <body>
-  <div id="wrapper">
-    <div class="nav">
-      <!-- logo跳转到主页 -->
-      <a class="headimage" href="/">
-        <img src="source/image/navigation_menu/logo.png">
-      </a>
-      <a href="/" class="headtitle">
-        <strong>聘</strong>
-      </a>
-      <!-- 搜索栏 -->
-      <form method="get" class="headform" action="https://www.baidu.com/search">
-        <input type="text" class="search_input" title="在此处输入搜索内容" placeholder="唐老板♂ want you">
-        <a class="search_btn" href="#">
-          <img class="ic_search" src="source/image/navigation_menu/search.png" >
-          </a>
-        </form>
-        
-        <!-- 导航菜单 -->
-        <div class="headlead ">
-          <ul class="menu ">
-            <!-- 首页 -->
-            <div class="dropdown ">
-              <a class="dropbtn " href="# ">首页</a>
-              <div class="dropdown_content ">
-                <a href="# ">系统首页</a>
-                <a href="# ">账户设置</a>
-                <a href="# ">登陆信息</a>
-              </div>
+<div id="header">
+    <div class="width_limit">
+        <a class="logo" href="home.php">
+        <img id="logo_img" src="img/logo.png" alt="logo">
+        </a>
+        <div class="logoutdiv">
+         <a href="index.html" class="header_tab logout">退出登录</a>
+        </div>
+
+        <div class="search">
+            <form action="">
+                <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+                    <a id="search_btn" href="#">
+                        <img src="img/search-btn.png" alt="search" style="width: 25px;height: 25px;">
+                    </a>
+            </form>
+        </div>
+        <!-- navigator -->
+        <!-- 用列表结构实现导航栏，实现下拉框 -->
+        <ul>
+            <li><a  href="home.php">首页</a></li>
+            <div class="dropdown">
+                <a href="apply.php" class="dropbtn">申请兼职</a>
+                <div class="dropdown-content">
+                    <a href="apply.php">校内兼职</a>
+                    <a href="apply.php">企业兼职</a>
+                    <a href="apply.php">实验室兼职</a>
+                </div>
             </div>
-            <!-- 申请兼职 --> 
-            <div class="dropdown ">
-              <a href="# " class="dropbtn ">申请兼职</a>
-              <div class="dropdown_content ">
-                <a href="# ">校内兼职</a>
-                <a href="# ">实验室兼职</a>
-                <a href="# ">校外兼职</a>
-              </div>
-            </div>
-            <!-- 发布兼职 -->
-            <li class="headlead_item ">
-              <a href="# ">发布兼职</a>
-            </li>
-            <!-- 我的兼职 -->
-            <li class="headlead_item ">
-              <a href="# ">我的兼职</a>
-            </li>
-          </ul>
-        </div>
+            <li><a href="hiring.php">发布兼职</a></li>
+            <li class="active"><a href="myjob.php">我的兼职</a></li>
+        </ul>
 
-        <!-- 退出登陆 -->
-        <a class="btn logoff " target="_self " href="# ">退出登陆</a>
-      </div>
+    </div>
+</div>
 
-      <div class="content ">
-        <!-- 主题和分割线 -->
-        <div>
-          <h1 class="topic ">我的兼职</h1>
+<div id="container">
+    <?php if($_SESSION['role']==1) echo "<div id=\"pubcontent\">"; else echo "<div id=\"content\">";?>
+    <div class="sub_header_title"><h1 id="topic">我的兼职</h1></div>
+    <hr>
+        <div class="sub_header">
+            <span id="pt_job_header">兼职</span>
+            <span id="pt_job_time">时间</span>
+            <span id="pt_job_location">薪资</span>
+            <span id="pt_job_salary">地点</span>
         </div>
-        <div>
-          <img id="topic-line " class="img " src="source/image/in_school/u106.png ">
-        </div>
-        <!-- 条件筛选栏 -->
-        <div class="seltion-cont "></div>
-        <!-- 侧边导航分类栏 -->
-        <div class="index-sider "></div>
-        <!-- 兼职信息列表 -->
-        <div class="job_list ">
-          <ul>
-            <li>
-              <a href="# " target="_blank " title="初三升高一男生暑假英语家教兼职招聘 ">初三升高一男生暑假英语家教兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="高三男生暑期化学家教兼职招聘 ">高三男生暑期化学家教兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="高三男生暑期数学家教兼职招聘 ">高三男生暑期数学家教兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="高三男生暑期生物家教兼职招聘 ">高三男生暑期生物家教兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="深圳市华星光电技术有限公司校园大使招聘 ">深圳市华星光电技术有限公司校园大使招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="建筑科学重点实验室问卷调查员暑期兼职招聘 ">建筑科学重点实验室问卷调查员暑期兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="初三毕业男生数学化学预科家教兼职招聘 ">初三毕业男生数学化学预科家教兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="日语翻译暑期兼职招聘 ">日语翻译暑期兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="高三男生暑期生物家教兼职招聘 ">高三男生暑期生物家教兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="深圳市华星光电技术有限公司校园大使招聘 ">深圳市华星光电技术有限公司校园大使招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="建筑科学重点实验室问卷调查员暑期兼职招聘 ">建筑科学重点实验室问卷调查员暑期兼职招聘</a>
-            </li>
-            <li>
-              <a href="# " target="_blank " title="初三毕业男生数学化学预科家教兼职招聘 ">初三毕业男生数学化学预科家教兼职招聘</a>
-            </li>
-          </ul>
-        </div>
-        <!-- 页面跳转 -->
-        <div class="center ">
-          <ul class="pagination ">
-            <li><a href="# ">«</a></li>
-            <li><a href="# " class="active ">1</a></li>
-            <li><a href="# ">2</a></li>
-            <li><a href="# ">3</a></li>
-            <li><a href="# ">4</a></li>
-            <li><a href="# ">5</a></li>
-            <li><a href="# ">6</a></li>
-            <li><a href="# ">7</a></li>
-            <li><a href="# ">»</a></li>
-          </ul>
-        </div>
+</div>
+    <!-- 分页 -->
+<div class="page">
+        <ul class="pagination">
+        </ul>
+    </div>
+</div>
 
-  </body>
+</body>
+<script src="./assets/src/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/src/myjob.js"></script>
+<script type="text/javascript" src="./assets/src/nav.js"></script>
 </html>

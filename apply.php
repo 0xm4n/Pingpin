@@ -1,19 +1,10 @@
 <?php
-  include_once("PHP/mysql.php");
-         
   session_start();
-
   if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
     echo "<script>alert('请先登陆！');</script>";
     header("Refresh:0;url=index.html");
     exit();
   }
-
-  getConnect();
-                    
-  $requireSQL = "SELECT * FROM information,contactinfo WHERE information.id=contactinfo.id";
-                    
-  $result = mysql_query($requireSQL);
 ?>
 
 <!doctype html>
@@ -22,6 +13,7 @@
 <head>
   <title>申请兼职</title>
   <meta charset="utf-8">
+	<link rel="stylesheet" href="./assets/css/nav.css">
   <?php 
     echo "<link rel=\"stylesheet\" href=\"./assets/css/apply.css\">";
   ?>
@@ -29,55 +21,68 @@
 </head>
 
 <body>
-  <div id="header">
+<div id="header">
+    <div class="width_limit">
+          <!-- logo -->
+    <a class="logo" href="home.php">
+        <img id="logo_img" src="img/logo.png" alt="logo">
+        <!-- 建议删除这个span，好像作用不大 -->
+        <!-- <span id="seperator">|</span> -->
+    </a>
 
-    <img id="logo_img" src="img/logo.png" alt="logo">
-    <span id="seperator">|</span>
-    <form action="">
-      <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
-      <img src="" alt="">
-    </form>
-    <span class="header_tab" id="f1">
-      <a href="home.php">首页</a>
-    </span>
-    <span class="header_tab" id="f2">申请兼职</span>
-    <span class="header_tab" id="f3">
-      <a href="hiring.php">发布兼职</a>
-    </span>
-    <span class="header_tab" id="f4">我的兼职</span>
-    <span class="header_tab" id="logout">
-      <a href="index.html">退出登录</a>
-    </span>
-    <img id="logout_icon" src="img/logout.png" alt="logout">
+     <!-- log out -->
+    <!-- 修改log out：float：right -->
+    <div class="logoutdiv">
+      <a href="index.html" class="header_tab logout">退出登录</a>
+    </div>
 
-  </div>
+    <!-- searching  -->
+    <div class="search">
+        <form action="">
+            <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
+            <a id="search_btn" href="#">
+              <img src="img/search-btn.png" alt="search" style="width: 25px;height: 25px;">
+            </a>
+          </form>
+    </div>
+    <!-- navigator -->
+    <!-- 用列表结构实现导航栏，实现下拉框 -->
+    <ul>
+      <li><a  href="home.php">首页</a></li>
+      <div class="dropdown active">
+        <a href="apply.php" class="dropbtn">申请兼职</a>
+        <div class="dropdown-content">
+          <a href="apply.php">校内兼职</a>
+          <a href="apply.php">企业兼职</a>
+          <a href="apply.php">实验室兼职</a>
+        </div>
+      </div>
+      <li><a href="hiring.php">发布兼职</a></li>
+      <li><a href="myjob.php">我的兼职</a></li>
+    </ul>
+
+    </div>
+</div>
 
   <div id="content">
     <!--主体内容头部标题-->
     <div class="content_header">
-      <h1 id="topic">华工校内兼职招聘相信息</h1>
+      <h1 id="topic">华工兼职招聘相关信息</h1>
       <hr>
     </div>
     <!--主体内容表格-->
-    <div class="content_body">
-
-
-      <!--招聘内容表格-->
-      <?php
-            while($row = mysql_fetch_array($result)){
-              echo"<div class=\"ptJob_Info\"><h2 class=\"pt_title\">".$row['title'].
-              "</h2><div class=\"clickToApply\"><span id=\"salary\"><span id=\"money\">".$row['reward'].
-              "</span><span></span></span><button id=\"apply_btn\">点击申请</button> </div><div><ul><li>
-              <span>工作时间：</span><span>".$row['time']."</span></li><li><span>兼职类型：</span><span>"
-              .$row['type']."</span> </li><li><span>工作地点：</span><span>".$row['place']."</span></li><li>
-              <span>学历要求：</span><span>".$row['education']."</span></li></ul></div></div>";
-             }
-             closeConnect();
-      ?>
+    <div id="content_body">
+      <!-- 插入json信息 -->
     </div>
-
+    <!-- 分页 -->
+    <div class="page">
+      <ul class="pagination">
+      </ul>
+    </div>
   </div>
 
 </body>
-
+<script src="./assets/src/jquery.min.js"></script>
+<script type="text/javascript" src="./assets/src/apply.js"></script>
+<script type="text/javascript" src="./assets/src/nav.js"></script>
 </html>
