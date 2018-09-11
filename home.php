@@ -36,7 +36,7 @@ div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.g
     <div class="width_limit">
           <!-- logo -->
     <a class="logo" href="home.php">
-        <img id="logo_img" src="img/logo.png" alt="logo">
+        <img id="logo_img" src="images/logo.png" alt="logo">
     </a>
 
      <!-- log out -->
@@ -49,7 +49,7 @@ div.caption { background:transparent; filter:progid:DXImageTransform.Microsoft.g
         <form action="">
             <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
             <a id="search_btn" href="#">
-              <img src="img/search-btn.png" alt="search" style="width: 25px;height: 25px;">
+              <img src="images/search-btn.png" alt="search" style="width: 25px;height: 25px;">
             </a>
           </form>
     </div>
