@@ -19,7 +19,6 @@
     margin-right: auto;
     text-align: center;
 
-	background: white url('../images/loading.gif') no-repeat center center;
 	overflow: hidden; }
 #featured>img,  
 #featured>div,
@@ -114,12 +113,10 @@ span.pause {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../../images/pause-black.png) no-repeat;
+
     z-index: 4;
     opacity: 0; }
 
-span.pause.active {
-    background: url(../images/pause-black.png) no-repeat 0 -40px }
 
 div.timer:hover span.pause,
 span.pause.active {
@@ -169,12 +166,10 @@ div.slider-nav span.right {
     background: url(../../images/right-arrow.png) no-repeat ;
     background-size: 40px 55px; 
     right: 0;
-    z-index: -1;
  }
 
 div.slider-nav span.left {
     background: url(../../images/left-arrow.png) no-repeat;
     background-size: 40px 55px;
     left: 0; 
-    z-index: -1;
 }

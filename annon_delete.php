@@ -1,23 +1,23 @@
 <?php 
-    include_once("PHP/mysql.php");
-	
-    session_start();   
-    if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
-        echo "<script>alert('请先登陆！');</script>";
-        header("Refresh:0;url=index.html");
-        exit();
-    }
+include_once("PHP/mysql.php");
 
-    if(!isset($_SESSION['role']) || empty($_SESSION['role'])|| $_SESSION['role']!=1){
-        echo "<script>alert('您没有权力进入此页！');</script>";
-        header("Refresh:0;url=home.php");
-        exit();
-    }
+session_start();
+if (!isset($_SESSION['log']) || empty($_SESSION['log']) || $_SESSION['log'] != 1) {
+    echo "<script>alert('请先登陆！');</script>";
+    header("Refresh:0;url=index.html");
+    exit();
+}
+
+if (!isset($_SESSION['role']) || empty($_SESSION['role']) || $_SESSION['role'] != 1) {
+    echo "<script>alert('您没有权力进入此页！');</script>";
+    header("Refresh:0;url=home.php");
+    exit();
+}
 
 
-    getConnect();
-    $selectSQL = "SELECT id, title, type, education, sex, other, content, reward FROM information";
-    $res1 = mysql_query($selectSQL);
+getConnect();
+$selectSQL = "SELECT id, title, type, education, sex, other, content, reward FROM information";
+$res1 = mysql_query($selectSQL);
 
 
 ?>
@@ -58,7 +58,7 @@
                 <div class="asideListTitle" onclick="toggleExpand(this)">
                     <div class="asideListTitleIcon asideListSystemUsers"></div>
                     <div class="asideListTitleWord">用户管理</div>
-                    <img src="src/arrow.png" class="asideListTitleStatusIcon" data-expand="false" />
+                    <img src="images/arrow.png" class="asideListTitleStatusIcon" data-expand="false" />
                 </div>
                 <ul class="asideListContent" data-expand="false">
                     <li class="asideListItem"><a href="console.php">删除用户</a></li>
@@ -69,7 +69,7 @@
                 <div class="asideListTitle" onclick="toggleExpand(this)">
                     <div class="asideListTitleIcon asideListAdministrator"></div>
                     <div class="asideListTitleWord">管理员</div>
-                    <img src="src/arrow.png" class="asideListTitleStatusIcon" data-expand="false" />
+                    <img src="images/arrow.png" class="asideListTitleStatusIcon" data-expand="false" />
                 </div>
                 <ul class="asideListContent" data-expand="false">
                     <li class="asideListItem">个人信息</li>
@@ -79,7 +79,7 @@
                 <div class="asideListTitle" onclick="toggleExpand(this)">
                     <div class="asideListTitleIcon asideListSettings"></div>
                     <div class="asideListTitleWord">系统设置</div>
-                    <img src="src/arrow.png" class="asideListTitleStatusIcon" data-expand="false" />
+                    <img src="images/arrow.png" class="asideListTitleStatusIcon" data-expand="false" />
                 </div>
                 <ul class="asideListContent" data-expand="false">
                     <li class="asideListItem">控制台主题</li>
@@ -111,17 +111,17 @@
                         </tr>
                         <form id="input">
                             <?php
-                                while ($row = mysql_fetch_array($res1)){
-                                    echo "<tr><td><input type=\"radio\" value=\"".$row['id']."\" name=\"all_row\"></input></td>
-                                    <td>".$row['title']."</td>
-                                    <td>".$row['type']."</td>
-                                    <td>".$row['education']."</td>
-                                    <td>".$row['sex']."</td>
-                                    <td>".$row['other']."</td>
-                                    <td>".$row['content']."</td>
-                                    <td>".$row['reward']."</td></tr>";
-                                }
-                                closeConnect();
+                            while ($row = mysql_fetch_array($res1)) {
+                                echo "<tr><td><input type=\"radio\" value=\"" . $row['id'] . "\" name=\"all_row\"></input></td>
+                                    <td>" . $row['title'] . "</td>
+                                    <td>" . $row['type'] . "</td>
+                                    <td>" . $row['education'] . "</td>
+                                    <td>" . $row['sex'] . "</td>
+                                    <td>" . $row['other'] . "</td>
+                                    <td>" . $row['content'] . "</td>
+                                    <td>" . $row['reward'] . "</td></tr>";
+                            }
+                            closeConnect();
                             ?>
                         </form>
                     </table>

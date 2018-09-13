@@ -11,7 +11,7 @@ if (!isset($_SESSION['log']) || empty($_SESSION['log']) || $_SESSION['log'] != 1
 <html>
 
 <head>
-  <title>申请兼职</title>
+  <title>企业兼职</title>
   <meta charset="utf-8">
 	<link rel="stylesheet" href="./assets/css/nav.css">
   <?php 
@@ -59,7 +59,7 @@ if (!isset($_SESSION['log']) || empty($_SESSION['log']) || $_SESSION['log'] != 1
   <div id="content">
     <!--主体内容头部标题-->
     <div class="content_header">
-      <h1 id="topic">华工兼职招聘相关信息</h1>
+      <h1 id="topic">企业兼职招聘相关信息</h1>
       <hr>
     </div>
     <!--主体内容表格-->
@@ -75,6 +75,6 @@ if (!isset($_SESSION['log']) || empty($_SESSION['log']) || $_SESSION['log'] != 1
 
 </body>
 <script src="./assets/src/jquery.min.js"></script>
-<script type="text/javascript" src="./assets/src/apply.js"></script>
+<script type="text/javascript" src="./assets/src/apply_company.js"></script>
 <script type="text/javascript" src="./assets/src/nav.js"></script>
 </html>

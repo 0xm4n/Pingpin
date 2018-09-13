@@ -4,7 +4,7 @@
         $hosthome = "localhost";
         $database = "test";
         $userName = "root";
-        $password = "mysqlPing.";
+        $password = "C959840668cf";
         global $databaseConnection;
         $databaseConnection = @mysql_connect($hosthome, $userName, $password) or die (mysql_error());
         mysql_query("set names gbk");

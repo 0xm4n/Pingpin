@@ -1,10 +1,10 @@
 <?php
-  session_start();   
-  if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
+session_start();
+if (!isset($_SESSION['log']) || empty($_SESSION['log']) || $_SESSION['log'] != 1) {
     echo "<script>alert('请先登陆！');</script>";
     header("Refresh:0;url=index.html");
     exit();
-  }
+}
 ?>
 <!doctype html>
 <html>
@@ -43,20 +43,21 @@
             <div class="dropdown">
                 <a href="apply.php" class="dropbtn">申请兼职</a>
                 <div class="dropdown-content">
-                    <a href="apply.php">校内兼职</a>
-                    <a href="apply.php">企业兼职</a>
-                    <a href="apply.php">实验室兼职</a>
+                    <a href="apply_school.php">校内兼职</a>
+                    <a href="apply_company.php">企业兼职</a>
+                    <a href="apply_lab.php">实验室兼职</a>
                 </div>
             </div>
             <li><a href="hiring.php">发布兼职</a></li>
-            <li class="active"><a href="myjob.php">我的兼职</a></li>
+            <li><a href="myjob.php" class="active">我的兼职</a></li>
         </ul>
 
     </div>
 </div>
 
 <div id="container">
-    <?php if($_SESSION['role']==1) echo "<div id=\"pubcontent\">"; else echo "<div id=\"content\">";?>
+    <?php if ($_SESSION['role'] == 1) echo "<div id=\"pubcontent\">";
+    else echo "<div id=\"content\">"; ?>
     <div class="sub_header_title"><h1 id="topic">我的兼职</h1></div>
     <hr>
         <div class="sub_header">

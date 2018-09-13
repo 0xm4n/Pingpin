@@ -54,7 +54,7 @@ body
 .logoIcon
 {
 	background-size: 80% 80%;
-    background-image: url("../../src/logo.png");
+    background-image: url("../../images/logo.png");
     width: 200px;
     height: 90px;
 }
@@ -96,13 +96,13 @@ body
 
 .notificationButton
 {
-	background-image: url("../../src/notification.png");
+	background-image: url("../../images/notification.png");
 	background-size: 40% 40%;
 }
 
 .logoutButton
 {
-	background-image: url("../../src/logout.png");
+	background-image: url("../../images/logout.png");
 	background-size: 40% 40%;
 }
 
@@ -213,17 +213,17 @@ body
 
 .asideListSystemUsers
 {
-	background-image: url("../../src/system_users.png");
+	background-image: url("../../images/system_users.png");
 }
 
 .asideListAdministrator
 {
-	background-image: url("../../src/administrator.png");
+	background-image: url("../../images/administrator.png");
 }
 
 .asideListSettings
 {
-	background-image: url("../../src/settings.png");
+	background-image: url("../../images/settings.png");
 }
 
 .asideListTitleWord
@@ -310,7 +310,7 @@ body
 	height: 30px;
 	width: 30px;
 	margin: 50px;
-	background-image: url("../../src/refresh.png");
+	background-image: url("../../images/refresh.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 70% 70%;

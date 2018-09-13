@@ -1,16 +1,16 @@
 <?php
-    session_start();   
-    if(!isset($_SESSION['log']) || empty($_SESSION['log'])|| $_SESSION['log']!=1){
-        echo "<script>alert('请先登陆！');</script>";
-        header("Refresh:0;url=index.html");
-        exit();
-    }
+session_start();
+if (!isset($_SESSION['log']) || empty($_SESSION['log']) || $_SESSION['log'] != 1) {
+    echo "<script>alert('请先登陆！');</script>";
+    header("Refresh:0;url=index.html");
+    exit();
+}
 
-    if(!isset($_SESSION['role']) || empty($_SESSION['role'])|| $_SESSION['role']!=1){
-        echo "<script>alert('您没有查看详情！');</script>";
-        header("Refresh:0;url=home.php");
-        exit();
-    }
+if (!isset($_SESSION['role']) || empty($_SESSION['role']) || $_SESSION['role'] != 1) {
+    echo "<script>alert('您没有查看详情！');</script>";
+    header("Refresh:0;url=home.php");
+    exit();
+}
 
 ?>
 <!doctype html>
@@ -38,7 +38,7 @@
             <form action="">
                 <input id="search_input" type="text" title="在此处输入搜索内容" placeholder="搜索相关兼职">
                     <a id="search_btn" href="#">
-                        <img src="images/search-btn.png" alt="search" style="width: 25px;height: 25px;">
+                        <img src="images/search-btn.png" alt="search" style="width: 23px;height: 23px;">
                     </a>
             </form>
         </div>
@@ -49,13 +49,13 @@
             <div class="dropdown">
                 <a href="apply.php" class="dropbtn">申请兼职</a>
                 <div class="dropdown-content">
-                    <a href="apply.php">校内兼职</a>
-                    <a href="apply.php">企业兼职</a>
-                    <a href="apply.php">实验室兼职</a>
+                    <a href="apply_school.php">校内兼职</a>
+                    <a href="apply_company.php">企业兼职</a>
+                    <a href="apply_lab.php">实验室兼职</a>
                 </div>
             </div>
             <li><a href="hiring.php">发布兼职</a></li>
-            <li class="active"><a href="myjob.php">我的兼职</a></li>
+            <li><a href="myjob.php" class="active">我的兼职</a></li>
         </ul>
 
     </div>
